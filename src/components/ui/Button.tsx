@@ -31,7 +31,7 @@ const sizes: Record<Size, string> = {
 };
 
 const base =
-  "inline-flex items-center justify-center gap-2 font-display font-semibold uppercase tracking-[var(--tracking-caps)] rounded-[var(--radius-button)] cursor-pointer transition-colors duration-[var(--dur-fast)] ease-[var(--ease-brand)] disabled:cursor-not-allowed disabled:opacity-50";
+  "inline-flex items-center justify-center gap-2 font-display-ui font-semibold uppercase tracking-[var(--tracking-caps)] rounded-[var(--radius-button)] cursor-pointer transition-colors duration-[var(--dur-fast)] ease-[var(--ease-brand)] disabled:cursor-not-allowed disabled:opacity-50";
 
 type ButtonAsButton = { href?: undefined } & ButtonHTMLAttributes<HTMLButtonElement>;
 type ButtonAsLink = { href: string } & AnchorHTMLAttributes<HTMLAnchorElement>;

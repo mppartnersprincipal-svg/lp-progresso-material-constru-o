@@ -57,6 +57,8 @@
 
   /* tokens/typography.css — famílias via next/font (ver layout.tsx) */
   --font-display: var(--font-kanit), "Barlow", sans-serif;
+  /* variante UI da display (botões: Kanit 600 normal — arquivo separado) */
+  --font-display-ui: var(--font-kanit-ui), "Barlow", sans-serif;
   --font-body: var(--font-barlow), sans-serif;
   --text-xs: 12px;
   --text-sm: 14px;
@@ -147,6 +149,7 @@
   --color-info: var(--info);
 
   --font-display: var(--font-kanit), "Barlow", sans-serif;
+  --font-display-ui: var(--font-kanit-ui), "Barlow", sans-serif;
   --font-body: var(--font-barlow), sans-serif;
 
   --radius-sm: var(--radius-sm);

@@ -13,6 +13,8 @@ import { PorQue } from "@/components/home/PorQue";
 import { OndeEstamos } from "@/components/home/OndeEstamos";
 import { FaqHome } from "@/components/home/FaqHome";
 import { CtaFinal } from "@/components/home/CtaFinal";
+import { OrcamentoSection } from "@/components/categoria/OrcamentoSection";
+import { WHATSAPP_MENSAGEM_PADRAO } from "@/lib/whatsapp";
 
 export const metadata: Metadata = {
   title: homeMeta.title,
@@ -37,9 +39,11 @@ export const metadata: Metadata = {
 const FACHADA_SRC = undefined;
 
 /**
- * Home (PRD §6.1) — 9 seções + flutuante:
+ * Home (PRD §6.1) — seções + flutuante:
  * 1 Header · 2 Hero · 3 Barra de confiança · 4 Grid de categorias ·
- * 5 Por que a Progresso · 6 Onde estamos · 7 FAQ · 8 CTA final · 9 Rodapé
+ * 5 Por que a Progresso · 6 Onde estamos · 7 Peça seu orçamento (formulário,
+ * PRD §11.1 — conversor terciário; copy dos Elementos Globais) · 8 FAQ ·
+ * 9 CTA final · 10 Rodapé
  */
 export default function Home() {
   return (
@@ -54,6 +58,9 @@ export default function Home() {
         <CategoriasGrid />
         <PorQue />
         <OndeEstamos fachadaSrc={FACHADA_SRC} />
+        <OrcamentoSection
+          categoria={{ slug: "home", mensagemWhatsApp: WHATSAPP_MENSAGEM_PADRAO }}
+        />
         <FaqHome />
         <CtaFinal />
       </main>

@@ -16,13 +16,7 @@ export function Wordmark({ onDark = false }: { onDark?: boolean }) {
       {onDark ? (
         <DiagonalBars height={26} count={2} />
       ) : (
-        <Image
-          src="/images/logo-simbolo.png"
-          alt=""
-          width={40}
-          height={40}
-          priority
-        />
+        <Image src="/images/logo-simbolo.png" alt="" width={40} height={40} />
       )}
       <span
         className={`font-display text-[22px] font-extrabold italic uppercase leading-none ${

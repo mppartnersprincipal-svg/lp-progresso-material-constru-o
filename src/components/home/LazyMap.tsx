@@ -52,7 +52,7 @@ export function LazyMap({ embedUrl, endereco }: { embedUrl: string; endereco: st
           <span className="max-w-[80%] text-center text-[length:var(--text-sm)] text-gray-700">
             {endereco}
           </span>
-          <span className="rounded-[var(--radius-button)] bg-accent px-[22px] py-[11px] font-display text-[14px] font-semibold uppercase tracking-[var(--tracking-caps)] text-white">
+          <span className="rounded-[var(--radius-button)] bg-accent px-[22px] py-[11px] font-display-ui text-[14px] font-semibold uppercase tracking-[var(--tracking-caps)] text-white">
             Carregar mapa
           </span>
         </button>

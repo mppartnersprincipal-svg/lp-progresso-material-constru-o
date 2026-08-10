@@ -1,4 +1,3 @@
-import type { Categoria } from "@/content/categorias";
 import { whatsappUrl } from "@/lib/whatsapp";
 import { Button } from "@/components/ui/Button";
 import { Card } from "@/components/ui/Card";
@@ -8,12 +7,17 @@ import { Section } from "@/components/ui/Section";
 import { FormOrcamento } from "@/components/form/FormOrcamento";
 
 /**
- * Orçamento (PRD §6.2 #7): formulário curto (3 campos — teto do PRD §11.1)
- * + CTA WhatsApp com a mensagem da categoria.
+ * Orçamento (PRD §6.2 #7 / §11.1): formulário curto (3 campos — teto do PRD)
+ * + CTA WhatsApp com mensagem pré-preenchida. Usada nas categorias (mensagem
+ * da linha) e na home (mensagem padrão, slug "home" nos eventos).
  * Copy do formulário: COPY-Progresso.md — Elementos globais.
  * Envio: FormOrcamento (WhatsApp + /obrigado + evento envio_formulario).
  */
-export function OrcamentoSection({ categoria }: { categoria: Categoria }) {
+export function OrcamentoSection({
+  categoria,
+}: {
+  categoria: { slug: string; mensagemWhatsApp: string };
+}) {
   return (
     <Section tone="light" id="orcamento">
       <Container className="grid grid-cols-1 items-start gap-[var(--space-6)] lg:grid-cols-2">

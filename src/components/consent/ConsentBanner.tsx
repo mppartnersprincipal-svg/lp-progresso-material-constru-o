@@ -63,20 +63,23 @@ export function ConsentBanner() {
         <p className="font-body text-[length:var(--text-sm)] leading-[var(--leading-normal)] text-body">
           Usamos cookies para medir o desempenho do site e dos anúncios. Você
           pode aceitar ou recusar. Detalhes na{" "}
-          <a href="/politica-de-privacidade">Política de Privacidade</a>.
+          <a href="/politica-de-privacidade" className="underline">
+            Política de Privacidade
+          </a>
+          .
         </p>
         <div className="flex shrink-0 gap-[var(--space-3)]">
           <button
             type="button"
             onClick={() => decidir(false)}
-            className="cursor-pointer rounded-[var(--radius-button)] border border-border-strong bg-transparent px-[22px] py-[11px] font-display text-[14px] font-semibold uppercase tracking-[var(--tracking-caps)] text-heading transition-colors duration-[var(--dur-fast)] hover:bg-gray-100"
+            className="cursor-pointer rounded-[var(--radius-button)] border border-border-strong bg-transparent px-[22px] py-[11px] font-display-ui text-[14px] font-semibold uppercase tracking-[var(--tracking-caps)] text-heading transition-colors duration-[var(--dur-fast)] hover:bg-gray-100"
           >
             Recusar
           </button>
           <button
             type="button"
             onClick={() => decidir(true)}
-            className="cursor-pointer rounded-[var(--radius-button)] bg-accent px-[22px] py-[11px] font-display text-[14px] font-semibold uppercase tracking-[var(--tracking-caps)] text-white transition-colors duration-[var(--dur-fast)] hover:bg-accent-hover"
+            className="cursor-pointer rounded-[var(--radius-button)] bg-accent px-[22px] py-[11px] font-display-ui text-[14px] font-semibold uppercase tracking-[var(--tracking-caps)] text-white transition-colors duration-[var(--dur-fast)] hover:bg-accent-hover"
           >
             Aceitar
           </button>

@@ -73,7 +73,10 @@ export function FormOrcamento({
       </Button>
       <p className="font-body text-[length:var(--text-xs)] text-muted">
         Ao enviar, você concorda com nossa{" "}
-        <a href="/politica-de-privacidade">Política de Privacidade</a>.
+        <a href="/politica-de-privacidade" className="underline">
+          Política de Privacidade
+        </a>
+        .
       </p>
     </form>
   );

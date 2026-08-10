@@ -36,6 +36,15 @@ com origem e justificativa. Nenhum valor foi inventado fora da escala existente.
 | D12 | GTM | Carregado apenas se `NEXT_PUBLIC_GTM_ID` estiver definido; consent default `denied` em `beforeInteractive`, GTM em `afterInteractive` | TODO [CONFIRMAR]: criar container GTM e definir o ID no deploy |
 | D13 | Contraste WCAG AA (PRD §12) | Textos pequenos em laranja sobre fundo claro usam `--accent-press #B75A0E` (4.9:1) em vez de `--accent #E8731B` (3.0:1, reprova); placeholders usam `gray-700` em vez de `text-muted` sobre `surface-sunken` | Valores da própria escala do DS, sem cor nova. **PENDENTE decisão do usuário:** texto branco sobre botões laranja `--accent` tem 2.8:1 e reprova AA — corrigir exigiria escurecer o fundo dos CTAs para orange-700 ou usar texto navy, mudando a cara da marca. Mantido branco-sobre-laranja (padrão do kit do DS) até decisão |
 
+## Derivações técnicas (otimização mobile — 10/08/2026)
+
+| # | Item | Decisão | Justificativa |
+|---|---|---|---|
+| D14 | Variantes de fonte | Kanit dividida em display (700/800 itálico, únicos pesos de título do DS) e ui (600 normal, botões, `preload: false`); variantes não usadas (500, 600i, 700n, 800n) removidas | Cada variante é um woff2 pré-carregado antes do LCP. TBT caiu de ~800ms para 30–80ms em medição limpa |
+| D15 | Logo do header | `logo-simbolo.png` reduzido de 512px/80KB para 128px/12KB, sem `priority` | Estava no preload competindo com fontes/CSS no caminho crítico do LCP para exibir 40px |
+| D16 | Rota /preview | Removida (e retirada do robots.txt) | Era ferramenta de revisão da Fase 1; código morto em produção |
+| D17 | Seção "Peça seu orçamento" na home | Adicionada entre "Onde estamos" e FAQ, reutilizando OrcamentoSection (slug "home" nos eventos) | Pedido do usuário (10/08) + PRD §11.1 lista o formulário como conversor terciário e a home não o tinha; copy 100% dos Elementos Globais |
+
 ## TODOs abertos (bloqueiam fases seguintes)
 
 - **Foto da fachada** — `Foto Fachada/` vazia. Quando chegar: mover para

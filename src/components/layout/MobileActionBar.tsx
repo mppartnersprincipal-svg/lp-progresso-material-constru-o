@@ -12,7 +12,7 @@ export function MobileActionBar() {
     >
       <a
         href={telUrl()}
-        className="flex min-h-14 items-center justify-center gap-2 font-display text-[length:var(--text-sm)] font-semibold uppercase tracking-[var(--tracking-caps)] text-heading hover:no-underline"
+        className="flex min-h-14 items-center justify-center gap-2 font-display-ui text-[length:var(--text-sm)] font-semibold uppercase tracking-[var(--tracking-caps)] text-heading hover:no-underline"
       >
         Ligar
       </a>
@@ -20,7 +20,7 @@ export function MobileActionBar() {
         href={whatsappUrl(WHATSAPP_MENSAGEM_PADRAO)}
         target="_blank"
         rel="noopener"
-        className="flex min-h-14 items-center justify-center gap-2 bg-accent font-display text-[length:var(--text-sm)] font-semibold uppercase tracking-[var(--tracking-caps)] text-white transition-colors duration-[var(--dur-fast)] hover:bg-accent-hover hover:text-white hover:no-underline"
+        className="flex min-h-14 items-center justify-center gap-2 bg-accent font-display-ui text-[length:var(--text-sm)] font-semibold uppercase tracking-[var(--tracking-caps)] text-white transition-colors duration-[var(--dur-fast)] hover:bg-accent-hover hover:text-white hover:no-underline"
       >
         WhatsApp
       </a>
