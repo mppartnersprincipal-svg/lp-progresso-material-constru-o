@@ -1,0 +1,9 @@
+:root{
+  --radius-sm:3px; --radius-md:6px; --radius-lg:10px; --radius-pill:999px; --radius-button:999px;
+  --shadow-sm:0 1px 2px rgba(21,34,56,.08);
+  --shadow-md:0 4px 12px rgba(21,34,56,.10);
+  --shadow-lg:0 12px 32px rgba(21,34,56,.16);
+  --skew:-8deg;              /* inclinacao da marca (banner/parallelogramo) */
+  --ease-brand:cubic-bezier(.2,.8,.2,1);
+  --dur-fast:120ms; --dur-med:220ms;
+}

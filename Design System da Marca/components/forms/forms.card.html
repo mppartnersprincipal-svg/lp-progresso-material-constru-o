@@ -1,0 +1,26 @@
+<!-- @dsCard group="Components" viewport="700x300" subtitle="Field, Input, Select, Checkbox, Radio, Switch" name="Formulários" -->
+<link rel="stylesheet" href="../../styles.css">
+<style>html,body{margin:0}body{background:#fff;padding:20px;box-sizing:border-box}</style>
+<script type="importmap">{"imports":{"react":"https://esm.sh/react@18","react-dom/client":"https://esm.sh/react-dom@18/client"}}</script>
+<div id="root"></div>
+<script type="module">
+import React from 'react'; import {createRoot} from 'react-dom/client';
+import {Field} from './Field.jsx'; import {Input} from './Input.jsx'; import {Select} from './Select.jsx';
+import {Checkbox} from './Checkbox.jsx'; import {Radio} from './Radio.jsx'; import {Switch} from './Switch.jsx';
+const h = React.createElement;
+function Demo(){
+  const [c,setC]=React.useState(true); const [r,setR]=React.useState('pf'); const [s,setS]=React.useState(false);
+  return h('div',{style:{display:'grid',gridTemplateColumns:'1fr 1fr',gap:16,alignItems:'start'}},
+    h(Field,{label:'Nome',required:true}, h(Input,{placeholder:'Seu nome completo'})),
+    h(Field,{label:'Telefone',hint:'Com DDD'}, h(Input,{type:'tel',placeholder:'(11) 99999-9999'})),
+    h(Field,{label:'Categoria'}, h(Select,{options:['Cimento e argamassa','Aço e ferragem','Acabamento']})),
+    h(Field,{label:'E-mail',error:'Informe um e-mail válido'}, h(Input,{invalid:true,defaultValue:'joao@'})),
+    h('div',{style:{display:'flex',flexDirection:'column',gap:10}},
+      h(Checkbox,{checked:c,onChange:setC,label:'Aceito receber ofertas'}),
+      h(Switch,{checked:s,onChange:setS,label:'Retirar na loja'})),
+    h('div',{style:{display:'flex',gap:20}},
+      h(Radio,{checked:r==='pf',onChange:()=>setR('pf'),label:'Pessoa física'}),
+      h(Radio,{checked:r==='pj',onChange:()=>setR('pj'),label:'Pessoa jurídica'})));
+}
+createRoot(document.getElementById('root')).render(h(Demo));
+</script>

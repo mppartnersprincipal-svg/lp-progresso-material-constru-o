@@ -1,0 +1,8 @@
+:root{
+  --font-display:'Kanit', 'Barlow', sans-serif;   /* titulos: bold, italico, uppercase */
+  --font-body:'Barlow', sans-serif;               /* texto corrido e UI */
+  --text-xs:12px; --text-sm:14px; --text-md:16px; --text-lg:18px;
+  --text-xl:24px; --text-2xl:32px; --text-3xl:44px; --text-4xl:60px;
+  --leading-tight:1.05; --leading-snug:1.25; --leading-normal:1.55;
+  --tracking-eyebrow:.18em; --tracking-caps:.04em;
+}

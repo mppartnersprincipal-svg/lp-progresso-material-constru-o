@@ -1,0 +1,206 @@
+@import "tailwindcss";
+
+/*
+ * Tokens transcritos VERBATIM de "Design System da Marca/tokens/".
+ * Fonte única de verdade no código. Não adicionar valores fora do DS —
+ * derivações documentadas em docs/decisoes-design.md.
+ */
+:root {
+  /* tokens/colors.css — base (extraídas do logotipo) */
+  --navy-950: #0f1a2b;
+  --navy-900: #152238;
+  --navy-800: #1c2c47;
+  --navy-700: #27395a;
+  --navy-600: #33486f;
+  --orange-700: #b75a0e;
+  --orange-600: #d2670f;
+  --orange-500: #e8731b;
+  --orange-400: #f08a3f;
+  --orange-100: #fbe4ce;
+  --orange-50: #fdf3e9;
+  --gray-0: #ffffff;
+  --gray-50: #f6f5f3;
+  --gray-100: #edece9;
+  --gray-200: #dddbd6;
+  --gray-300: #c4c1ba;
+  --gray-500: #8b8880;
+  --gray-700: #55534e;
+  --green-600: #2e7d4f;
+  --yellow-600: #d99a11;
+  --red-600: #c23b22;
+  --blue-600: #2b6cb0;
+
+  /* tokens/colors.css — semânticas */
+  --surface-page: var(--gray-50);
+  --surface-card: #ffffff;
+  --surface-sunken: var(--gray-100);
+  --surface-dark: var(--navy-800);
+  --surface-darker: var(--navy-900);
+  --text-heading: var(--navy-800);
+  --text-body: #3d4658;
+  --text-muted: #6b7284;
+  --text-on-dark: #f4f6fa;
+  --text-muted-on-dark: #9da9bf;
+  --accent: var(--orange-500);
+  --accent-hover: var(--orange-600);
+  --accent-press: var(--orange-700);
+  --accent-soft: var(--orange-50);
+  --link: var(--orange-600);
+  --link-hover: var(--orange-700);
+  --border: var(--gray-200);
+  --border-strong: var(--gray-300);
+  --focus-ring: rgba(232, 115, 27, 0.35);
+  --success: var(--green-600);
+  --warning: var(--yellow-600);
+  --danger: var(--red-600);
+  --info: var(--blue-600);
+
+  /* tokens/typography.css — famílias via next/font (ver layout.tsx) */
+  --font-display: var(--font-kanit), "Barlow", sans-serif;
+  --font-body: var(--font-barlow), sans-serif;
+  --text-xs: 12px;
+  --text-sm: 14px;
+  --text-md: 16px;
+  --text-lg: 18px;
+  --text-xl: 24px;
+  --text-2xl: 32px;
+  --text-3xl: 44px;
+  --text-4xl: 60px;
+  --leading-tight: 1.05;
+  --leading-snug: 1.25;
+  --leading-normal: 1.55;
+  --tracking-eyebrow: 0.18em;
+  --tracking-caps: 0.04em;
+
+  /* tokens/spacing.css */
+  --space-1: 4px;
+  --space-2: 8px;
+  --space-3: 12px;
+  --space-4: 16px;
+  --space-5: 24px;
+  --space-6: 32px;
+  --space-7: 48px;
+  --space-8: 64px;
+  --space-9: 96px;
+  --space-10: 128px;
+  --container-max: 1140px;
+
+  /* tokens/effects.css */
+  --radius-sm: 3px;
+  --radius-md: 6px;
+  --radius-lg: 10px;
+  --radius-pill: 999px;
+  --radius-button: 999px;
+  --shadow-sm: 0 1px 2px rgba(21, 34, 56, 0.08);
+  --shadow-md: 0 4px 12px rgba(21, 34, 56, 0.1);
+  --shadow-lg: 0 12px 32px rgba(21, 34, 56, 0.16);
+  --skew: -8deg; /* inclinação da marca (banner/parallelogramo) */
+  --ease-brand: cubic-bezier(0.2, 0.8, 0.2, 1);
+  --dur-fast: 120ms;
+  --dur-med: 220ms;
+}
+
+/*
+ * Ponte tokens → utilitários Tailwind v4 (mesmos valores, nomes utilizáveis
+ * em classes: bg-navy-800, text-accent, rounded-button, shadow-md-brand etc.)
+ */
+@theme inline {
+  --color-navy-950: var(--navy-950);
+  --color-navy-900: var(--navy-900);
+  --color-navy-800: var(--navy-800);
+  --color-navy-700: var(--navy-700);
+  --color-navy-600: var(--navy-600);
+  --color-orange-700: var(--orange-700);
+  --color-orange-600: var(--orange-600);
+  --color-orange-500: var(--orange-500);
+  --color-orange-400: var(--orange-400);
+  --color-orange-100: var(--orange-100);
+  --color-orange-50: var(--orange-50);
+  --color-gray-0: var(--gray-0);
+  --color-gray-50: var(--gray-50);
+  --color-gray-100: var(--gray-100);
+  --color-gray-200: var(--gray-200);
+  --color-gray-300: var(--gray-300);
+  --color-gray-500: var(--gray-500);
+  --color-gray-700: var(--gray-700);
+  --color-surface-page: var(--surface-page);
+  --color-surface-card: var(--surface-card);
+  --color-surface-sunken: var(--surface-sunken);
+  --color-surface-dark: var(--surface-dark);
+  --color-surface-darker: var(--surface-darker);
+  --color-heading: var(--text-heading);
+  --color-body: var(--text-body);
+  --color-muted: var(--text-muted);
+  --color-on-dark: var(--text-on-dark);
+  --color-muted-on-dark: var(--text-muted-on-dark);
+  --color-accent: var(--accent);
+  --color-accent-hover: var(--accent-hover);
+  --color-accent-press: var(--accent-press);
+  --color-accent-soft: var(--accent-soft);
+  --color-link: var(--link);
+  --color-link-hover: var(--link-hover);
+  --color-border-token: var(--border);
+  --color-border-strong: var(--border-strong);
+  --color-success: var(--success);
+  --color-warning: var(--warning);
+  --color-danger: var(--danger);
+  --color-info: var(--info);
+
+  --font-display: var(--font-kanit), "Barlow", sans-serif;
+  --font-body: var(--font-barlow), sans-serif;
+
+  --radius-sm: var(--radius-sm);
+  --radius-md: var(--radius-md);
+  --radius-lg: var(--radius-lg);
+  --radius-pill: var(--radius-pill);
+  --radius-button: var(--radius-button);
+
+  --shadow-sm-brand: var(--shadow-sm);
+  --shadow-md-brand: var(--shadow-md);
+  --shadow-lg-brand: var(--shadow-lg);
+
+  --ease-brand: var(--ease-brand);
+}
+
+/*
+ * tokens/base.css — verbatim, dentro de @layer base para que os utilitários
+ * do Tailwind (camada utilities) possam sobrescrever (regra fora de camada
+ * venceria qualquer utilitário no cascade layers).
+ */
+@layer base {
+  body {
+    font-family: var(--font-body);
+    color: var(--text-body);
+    background: var(--surface-page);
+    margin: 0;
+    -webkit-font-smoothing: antialiased;
+  }
+  a {
+    color: var(--link);
+    text-decoration: none;
+  }
+  a:hover {
+    color: var(--link-hover);
+    text-decoration: underline;
+  }
+  ::selection {
+    background: var(--orange-100);
+  }
+
+  /* Foco visível (readme do DS: anel 0 0 0 3px var(--focus-ring)) */
+  :focus-visible {
+    outline: none;
+    box-shadow: 0 0 0 3px var(--focus-ring);
+  }
+
+  /* Acessibilidade: respeitar prefers-reduced-motion (PRD §12) */
+  @media (prefers-reduced-motion: reduce) {
+    *,
+    *::before,
+    *::after {
+      animation-duration: 0.01ms !important;
+      animation-iteration-count: 1 !important;
+      transition-duration: 0.01ms !important;
+    }
+  }
+}
