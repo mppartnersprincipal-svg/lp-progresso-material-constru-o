@@ -91,12 +91,13 @@ export function Header({
               <p className="px-[var(--space-3)] pb-[var(--space-2)] font-body text-[length:var(--text-xs)] font-semibold uppercase tracking-[var(--tracking-eyebrow)] text-accent-press">
                 Categorias
               </p>
+              {/* py-3: área de toque ≥48px (PRD §11.3) */}
               <ul className="grid grid-cols-1 gap-[2px] sm:grid-cols-2">
                 {categorias.map((c) => (
                   <li key={c.slug}>
                     <a
                       href={`/${c.slug}`}
-                      className="block rounded-[var(--radius-md)] px-[var(--space-3)] py-[var(--space-2)] font-body text-[length:var(--text-md)] font-medium text-body hover:bg-accent-soft hover:no-underline"
+                      className="block rounded-[var(--radius-md)] px-[var(--space-3)] py-[var(--space-3)] font-body text-[length:var(--text-md)] font-medium text-body hover:bg-accent-soft hover:no-underline"
                     >
                       {c.nome}
                     </a>
@@ -109,7 +110,7 @@ export function Header({
                     <li key={s.href}>
                       <a
                         href={s.href}
-                        className="block rounded-[var(--radius-md)] px-[var(--space-3)] py-[var(--space-2)] font-body text-[length:var(--text-md)] font-medium text-body hover:bg-accent-soft hover:no-underline"
+                        className="block rounded-[var(--radius-md)] px-[var(--space-3)] py-[var(--space-3)] font-body text-[length:var(--text-md)] font-medium text-body hover:bg-accent-soft hover:no-underline"
                       >
                         {s.label}
                       </a>
@@ -118,7 +119,7 @@ export function Header({
                   <li>
                     <a
                       href={telUrl()}
-                      className="block rounded-[var(--radius-md)] px-[var(--space-3)] py-[var(--space-2)] font-body text-[length:var(--text-md)] font-semibold text-heading hover:bg-accent-soft hover:no-underline"
+                      className="block rounded-[var(--radius-md)] px-[var(--space-3)] py-[var(--space-3)] font-body text-[length:var(--text-md)] font-semibold text-heading hover:bg-accent-soft hover:no-underline"
                     >
                       Ligar: {NAP.telefoneDisplay}
                     </a>
