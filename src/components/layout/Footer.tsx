@@ -86,7 +86,12 @@ export function Footer() {
         <div className="mt-[var(--space-7)] border-t border-[rgba(244,246,250,.15)] pt-[var(--space-5)] font-body text-[length:var(--text-xs)] text-muted-on-dark">
           © {ano} {NAP.nome} ·{" "}
           {/* TODO [CONFIRMAR]: razão social e CNPJ */}
-          <a href="/politica-de-privacidade" className="text-muted-on-dark hover:text-orange-400">
+          {/* py-2 inline-block: amplia a área de toque do link legal sem
+              mudar o layout da linha (PRD §11.3) */}
+          <a
+            href="/politica-de-privacidade"
+            className="inline-block py-[var(--space-2)] text-muted-on-dark hover:text-orange-400"
+          >
             Política de Privacidade
           </a>
         </div>
