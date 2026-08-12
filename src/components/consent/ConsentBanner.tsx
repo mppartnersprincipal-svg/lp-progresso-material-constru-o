@@ -31,7 +31,10 @@ function consentUpdate(granted: boolean) {
  * - default "denied" já setado antes (Gtm.tsx) — aqui só atualiza no aceite;
  * - overlay em CAMADA FIXA (position: fixed) → zero CLS por definição;
  * - em mobile fica acima da barra [Ligar | WhatsApp];
- * - não é intersticial: não cobre o conteúdo na chegada (PRD §9.6).
+ * - não é intersticial: não cobre o conteúdo na chegada (PRD §9.6);
+ * - COMPACTO no mobile (padding/texto/gaps um passo menores, escala do DS):
+ *   senão o banner cobre o CTA "Ligar" do hero na primeira visita e o
+ *   telefone deixa de ser visível sem rolagem (PRD §9.6).
  */
 export function ConsentBanner() {
   const [visivel, setVisivel] = useState(false);
@@ -57,10 +60,10 @@ export function ConsentBanner() {
     <div
       role="region"
       aria-label="Consentimento de cookies"
-      className="fixed inset-x-0 bottom-14 z-[60] border-t border-border-token bg-surface-card p-[var(--space-4)] shadow-lg-brand md:bottom-0"
+      className="fixed inset-x-0 bottom-14 z-[60] border-t border-border-token bg-surface-card p-[var(--space-3)] shadow-lg-brand md:bottom-0 md:p-[var(--space-4)]"
     >
-      <div className="mx-auto flex w-full max-w-[var(--container-max)] flex-col items-start gap-[var(--space-3)] px-[var(--space-2)] sm:flex-row sm:items-center sm:justify-between">
-        <p className="font-body text-[length:var(--text-sm)] leading-[var(--leading-normal)] text-body">
+      <div className="mx-auto flex w-full max-w-[var(--container-max)] flex-col items-start gap-[var(--space-2)] px-[var(--space-2)] sm:flex-row sm:items-center sm:justify-between sm:gap-[var(--space-3)]">
+        <p className="font-body text-[length:var(--text-xs)] leading-[var(--leading-normal)] text-body md:text-[length:var(--text-sm)]">
           Usamos cookies para medir o desempenho do site e dos anúncios. Você
           pode aceitar ou recusar. Detalhes na{" "}
           <a href="/politica-de-privacidade" className="underline">
