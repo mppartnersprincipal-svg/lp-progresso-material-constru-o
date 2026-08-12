@@ -1,3 +1,4 @@
+import { NAP } from "@/lib/nap";
 import { telUrl, whatsappUrl, WHATSAPP_MENSAGEM_PADRAO } from "@/lib/whatsapp";
 
 /**
@@ -17,11 +18,16 @@ export function MobileActionBar({
       data-cta="barra-mobile"
       className="fixed inset-x-0 bottom-0 z-40 grid grid-cols-2 border-t border-border-token bg-surface-card shadow-lg-brand md:hidden"
     >
+      {/* Número no rótulo: o telefone fica visível sem rolagem mesmo com o
+          banner de consentimento aberto sobre o hero (PRD §9.6) */}
       <a
         href={telUrl()}
-        className="flex min-h-14 items-center justify-center gap-2 font-display-ui text-[length:var(--text-sm)] font-semibold uppercase tracking-[var(--tracking-caps)] text-heading hover:no-underline"
+        className="flex min-h-14 flex-col items-center justify-center font-display-ui font-semibold uppercase tracking-[var(--tracking-caps)] text-heading hover:no-underline"
       >
-        Ligar
+        <span className="text-[length:var(--text-sm)] leading-[var(--leading-snug)]">Ligar</span>
+        <span className="font-body text-[length:var(--text-xs)] font-semibold normal-case tracking-normal leading-[var(--leading-snug)]">
+          {NAP.telefoneDisplay}
+        </span>
       </a>
       <a
         href={whatsappUrl(mensagem)}
