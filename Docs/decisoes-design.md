@@ -52,6 +52,7 @@ com origem e justificativa. Nenhum valor foi inventado fora da escala existente.
 | 5 | Endereço oficial | **"Av. Graça Aranha - Jardim Nova Era, Aparecida de Goiânia - GO, 74916-379"** — confirmado sem número (igual à listagem pública). Resolve o `[CONFIRMAR]` de número/quadra/lote em `nap.ts`, `config.ts` e `home.ts` |
 | 6 | Telefone | **(62) 98517-2398** — confirmado (já era o valor em uso) |
 | 7 | Instagram | **instagram.com/progressomateriais10** — adicionado ao NAP, ao rodapé (coluna Contato) e ao schema `HardwareStore.sameAs` |
+| 8 | Coordenadas do pino (GBP) | **-16.752553, -49.281904** — fornecidas pelo usuário em 12/08. Preenchem o `geo` do schema e passam a ser o destino do embed do mapa e do "Como chegar" (endereço sem número geocodifica impreciso) |
 
 ## Integração das fotos reais da loja (12/08/2026)
 
@@ -90,9 +91,9 @@ com origem e justificativa. Nenhum valor foi inventado fora da escala existente.
   `src/lib/config.ts`, `src/app/politica-de-privacidade/page.tsx`,
   `src/components/analytics/Gtm.tsx` e `src/components/layout/Footer.tsx`.
   Endereço, telefone e Instagram já confirmados (12/08).
-- **Pendências PRD §15** — domínio, coordenadas do GBP ({LAT}/{LNG}),
-  WhatsApp ativo no número, orçamento de Ads, ferragens×ferramentas
-  (10 vs 9 páginas).
+- **Pendências PRD §15** — domínio, WhatsApp ativo no número, orçamento de
+  Ads, ferragens×ferramentas (10 vs 9 páginas). Coordenadas do pino:
+  resolvidas em 12/08 (decisão #8).
 - ~~Originais das fotos fora do git~~ — resolvido em 12/08: usuário mandou
   commitar tudo (commit d3335e5), incluindo o webp do ChatGPT.
 - **Fachada em versão de qualidade aumentada (decisão do usuário, 12/08/2026)**

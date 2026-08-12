@@ -98,5 +98,5 @@ Regras: máx. 2 fundos por página (claro + navy); laranja nunca como fundo de s
 
 - Fotos reais para as categorias `impermeabilizantes` e `portas-e-janelas` — seguem com banco (Pexels); pedir ao cliente
 - `[CONFIRMAR]` restantes da copy — como TODOs em `src/content/categorias.ts`, `src/content/home.ts`, `src/lib/nap.ts` e `src/components/layout/Footer.tsx` (endereço/telefone/Instagram já confirmados em 12/08)
-- Pendências do PRD §15: domínio, `{LAT}`/`{LNG}` do GBP, WhatsApp ativo no número, razão social/CNPJ, orçamento de Ads, ferragens×ferramentas (10 vs 9 páginas)
+- Pendências do PRD §15: domínio, WhatsApp ativo no número, razão social/CNPJ, orçamento de Ads, ferragens×ferramentas (10 vs 9 páginas). Coordenadas do pino: confirmadas em 12/08 (`SITE.geo` em config.ts, usadas no schema/mapa/rota)
 - Logo PNG transparente + versão para fundo escuro (pedir ao cliente)

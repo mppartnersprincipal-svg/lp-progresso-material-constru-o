@@ -39,19 +39,19 @@ export const SITE = {
     postalCode: NAP.cep,
     addressCountry: "BR",
   },
-  // TODO [CONFIRMAR]: coordenadas {LAT}/{LNG} — extrair do pino do Google
-  // Business Profile depois de criado. NÃO estimar (PRD §8.3): o campo "geo"
-  // fica FORA do schema até a confirmação.
+  // Coordenadas do pino da loja, fornecidas pelo usuário em 12/08/2026
+  // (6 casas decimais ≈ precisão de 10cm). Usadas no schema (geo), no embed
+  // do mapa e no "Como chegar" — o endereço sem número geocodifica impreciso.
+  geo: {
+    latitude: -16.752553,
+    longitude: -49.281904,
+  },
 } as const;
 
-const enderecoCompleto = `${NAP.nome}, ${NAP.logradouro}, ${NAP.bairro}, ${NAP.cidade} - ${NAP.uf}, ${NAP.cep}`;
+const pino = `${SITE.geo.latitude},${SITE.geo.longitude}`;
 
 /** Embed do Google Maps — usar SOMENTE via LazyMap (nunca iframe direto no load). */
-export const MAPS_EMBED_URL = `https://www.google.com/maps?q=${encodeURIComponent(
-  enderecoCompleto,
-)}&output=embed`;
+export const MAPS_EMBED_URL = `https://www.google.com/maps?q=${encodeURIComponent(pino)}&output=embed`;
 
-/** Link "Como chegar" (abre rota no app de mapas). */
-export const MAPS_DIRECTIONS_URL = `https://www.google.com/maps/dir/?api=1&destination=${encodeURIComponent(
-  enderecoCompleto,
-)}`;
+/** Link "Como chegar" (abre rota no app de mapas, direto no pino da loja). */
+export const MAPS_DIRECTIONS_URL = `https://www.google.com/maps/dir/?api=1&destination=${encodeURIComponent(pino)}`;

@@ -32,4 +32,4 @@ export const HORARIOS = {
 
 // TODO [CONFIRMAR]: razão social e CNPJ (rodapé, política de privacidade, schema)
 // TODO [CONFIRMAR]: domínio do site ({DOMINIO} no schema, sitemap e robots.txt)
-// TODO [CONFIRMAR]: coordenadas {LAT}/{LNG} — extrair do pino do GBP, não estimar
+// Coordenadas do pino: confirmadas pelo usuário em 12/08/2026 → config.ts (SITE.geo)

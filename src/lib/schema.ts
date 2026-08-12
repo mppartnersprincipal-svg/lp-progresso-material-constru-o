@@ -27,8 +27,11 @@ export function hardwareStoreSchema() {
       "@type": "PostalAddress",
       ...SITE.endereco,
     },
-    // TODO [CONFIRMAR]: "geo" omitido de propósito — coordenadas {LAT}/{LNG}
-    // saem do pino do GBP depois de criado. Não estimar (PRD §8.3).
+    geo: {
+      "@type": "GeoCoordinates",
+      latitude: SITE.geo.latitude,
+      longitude: SITE.geo.longitude,
+    },
     openingHoursSpecification: [
       {
         "@type": "OpeningHoursSpecification",
