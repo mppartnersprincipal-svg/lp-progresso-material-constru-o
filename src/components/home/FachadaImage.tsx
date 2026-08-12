@@ -9,11 +9,15 @@ import Image from "next/image";
 export const FACHADA_ALT =
   "Fachada da Progresso Materiais de Construção na Av. Graça Aranha, Jardim Nova Era, Aparecida de Goiânia";
 
-/** Original retrato 1080×1252 — para caixas altas (coluna do OndeEstamos). */
+/**
+ * Retrato 1164×1351 — para caixas altas (coluna do OndeEstamos).
+ * Versão com qualidade aumentada (upscale IA da foto real do cliente),
+ * aprovada pelo usuário em 12/08/2026.
+ */
 export const FACHADA_RETRATO = "/images/fachada/fachada.jpg";
 
 /**
- * Recorte 16:9 1080×607 (letreiro + frente da loja) — para caixas paisagem
+ * Recorte 16:9 1164×655 (letreiro + frente da loja) — para caixas paisagem
  * (hero, LCP: evita baixar/decodificar a metade retrato que o object-cover
  * descartaria) e para o og:image.
  */

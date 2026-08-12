@@ -93,7 +93,10 @@ com origem e justificativa. Nenhum valor foi inventado fora da escala existente.
 - **Pendências PRD §15** — domínio, coordenadas do GBP ({LAT}/{LNG}),
   WhatsApp ativo no número, orçamento de Ads, ferragens×ferramentas
   (10 vs 9 páginas).
-- **Originais das fotos** — `Foto Fachada/` e `Fotos Loja/` estão fora do
-  git (untracked); decidir se entram no repo. `Foto Fachada/` contém também
-  um webp gerado por IA (ChatGPT, 12/08) que NÃO é foto real — não usar
-  como fachada sem decisão explícita do usuário.
+- ~~Originais das fotos fora do git~~ — resolvido em 12/08: usuário mandou
+  commitar tudo (commit d3335e5), incluindo o webp do ChatGPT.
+- **Fachada em versão de qualidade aumentada (decisão do usuário, 12/08/2026)**
+  — o usuário aprovou substituir os JPEGs da fachada pela versão com upscale
+  de IA (`Foto Fachada/ChatGPT-Image-12-de-ago...webp`, mesma cena da foto
+  real, letreiro mais nítido). `fachada.jpg` 1164×1351 e `fachada-og.jpg`
+  1164×655, convertidos com sharp (q82, mozjpeg).

@@ -9,8 +9,8 @@ converte para AVIF/WebP com `srcset` no serve.
 
 | Arquivo | Original (hora no nome) | Conteúdo |
 |---|---|---|
-| fachada/fachada.jpg | 15.33.54 | Fachada da loja de esquina, letreiro amarelo (original inteira, retrato) |
-| fachada/fachada-og.jpg | 15.33.54 | Recorte 16:9 do letreiro + frente da loja (Open Graph) |
+| fachada/fachada.jpg | ChatGPT-Image-12-de-ago (upscale IA da foto 15.33.54, aprovado pelo usuário 12/08) | Fachada da loja de esquina, letreiro amarelo (inteira, retrato 1164×1351) |
+| fachada/fachada-og.jpg | idem | Recorte 16:9 do letreiro + frente da loja, 1164×655 (hero + Open Graph) |
 | categorias/ferramentas.jpg | 15.23.36 | Parede de ferramentas manuais no balcão |
 | categorias/tintas-e-pintura.jpg | 15.24.08 | Expositor de pincéis, rolos, fitas e acessórios de pintura |
 | categorias/material-hidraulico.jpg | 15.24.36 | Expositor de itens hidráulicos (torneiras, sifões, engates) |

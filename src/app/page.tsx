@@ -28,8 +28,9 @@ export const metadata: Metadata = {
     siteName: "Progresso Materiais de Construção",
     locale: "pt_BR",
     type: "website",
-    // Recorte 16:9 da fachada para OG (a foto original é retrato 1080×1252)
-    images: [{ url: "/images/fachada/fachada-og.jpg", width: 1080, height: 607 }],
+    // Recorte 16:9 da fachada para OG (original retrato 1164×1351 — versão
+    // com qualidade aumentada aprovada pelo usuário em 12/08/2026)
+    images: [{ url: "/images/fachada/fachada-og.jpg", width: 1164, height: 655 }],
   },
   twitter: { card: "summary_large_image" },
 };
