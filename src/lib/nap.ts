@@ -6,8 +6,9 @@
  */
 export const NAP = {
   nome: "Progresso Materiais de Construção",
-  // TODO [CONFIRMAR]: número/quadra/lote para completar o endereço
-  endereco: "Av. Graça Aranha — Jardim Nova Era, Aparecida de Goiânia - GO, 74916-379",
+  // Endereço e telefone CONFIRMADOS pelo usuário em 12/08/2026, nesta forma
+  // exata (sem número, hífen simples — igual à listagem pública da loja).
+  endereco: "Av. Graça Aranha - Jardim Nova Era, Aparecida de Goiânia - GO, 74916-379",
   logradouro: "Av. Graça Aranha",
   bairro: "Jardim Nova Era",
   cidade: "Aparecida de Goiânia",
@@ -16,6 +17,9 @@ export const NAP = {
   telefoneDisplay: "(62) 98517-2398",
   telefoneE164: "+5562985172398",
   whatsappNumero: "5562985172398",
+  /** Confirmado pelo usuário em 12/08/2026 */
+  instagram: "https://www.instagram.com/progressomateriais10/",
+  instagramHandle: "@progressomateriais10",
 } as const;
 
 export const HORARIOS = {

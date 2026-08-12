@@ -1,3 +1,4 @@
+import type { Metadata } from "next";
 import { categorias } from "@/content/categorias";
 import { whatsappUrl, WHATSAPP_MENSAGEM_PADRAO } from "@/lib/whatsapp";
 import { Button } from "@/components/ui/Button";
@@ -11,6 +12,10 @@ import { Footer } from "@/components/layout/Footer";
  * 404 personalizada (PRD §13) com grid das 10 categorias.
  * Copy: COPY-Progresso.md — Elementos globais.
  */
+export const metadata: Metadata = {
+  title: "Página não encontrada | Progresso",
+};
+
 export default function NotFound() {
   return (
     <>

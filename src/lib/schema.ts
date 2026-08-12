@@ -1,6 +1,7 @@
 import { SITE, DOMINIO } from "./config";
+import { NAP } from "./nap";
 import { categorias, type Categoria } from "@/content/categorias";
-import { faqHome } from "@/content/home";
+import { faqHome, homeMeta } from "@/content/home";
 
 /**
  * JSON-LD da home (PRD §8.3). Domínio, telefone e endereço vêm de
@@ -14,10 +15,14 @@ export function hardwareStoreSchema() {
     "@type": "HardwareStore",
     "@id": `${DOMINIO}/#loja`,
     name: SITE.nome,
+    // Mesma description da home (copy já aprovada) — não criar texto novo
+    description: homeMeta.description,
     image: `${DOMINIO}/images/fachada/fachada.jpg`,
+    logo: `${DOMINIO}/images/logo-simbolo.png`,
     url: DOMINIO,
     telephone: SITE.telefoneE164,
     priceRange: SITE.priceRange,
+    sameAs: [NAP.instagram],
     address: {
       "@type": "PostalAddress",
       ...SITE.endereco,
@@ -60,13 +65,16 @@ export function hardwareStoreSchema() {
   };
 }
 
-/** D) WebSite — na home. */
+/** D) WebSite — na home. Ligado à entidade da loja via publisher/@id. */
 export function webSiteSchema() {
   return {
     "@context": "https://schema.org",
     "@type": "WebSite",
+    "@id": `${DOMINIO}/#website`,
     name: SITE.nome,
     url: DOMINIO,
+    inLanguage: "pt-BR",
+    publisher: { "@id": `${DOMINIO}/#loja` },
   };
 }
 

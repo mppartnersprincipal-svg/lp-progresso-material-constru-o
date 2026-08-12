@@ -22,9 +22,14 @@ const navSecoes = [
 const navLink =
   "font-body text-[length:var(--text-sm)] font-medium text-body hover:text-link-hover hover:no-underline";
 
-export function Header() {
+export function Header({
+  mensagem = WHATSAPP_MENSAGEM_PADRAO,
+}: {
+  /** Mensagem do CTA de WhatsApp — por categoria nas páginas de categoria */
+  mensagem?: string;
+}) {
   return (
-    <header className="sticky top-0 z-40 border-b border-border-token bg-surface-card">
+    <header data-cta="header" className="sticky top-0 z-40 border-b border-border-token bg-surface-card">
       <Container className="relative flex h-[72px] items-center justify-between gap-[var(--space-4)]">
         <a href="/" className="shrink-0 hover:no-underline" aria-label={NAP.nome}>
           <Wordmark />
@@ -71,7 +76,7 @@ export function Header() {
           {/* Em mobile a barra fixa inferior já traz Ligar + WhatsApp (PRD §6.1) */}
           <span className="hidden sm:block">
             <Button
-              href={whatsappUrl(WHATSAPP_MENSAGEM_PADRAO)}
+              href={whatsappUrl(mensagem)}
               size="md"
               target="_blank"
               rel="noopener"

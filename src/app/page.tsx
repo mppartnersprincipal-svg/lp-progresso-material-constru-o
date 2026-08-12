@@ -14,6 +14,7 @@ import { OndeEstamos } from "@/components/home/OndeEstamos";
 import { FaqHome } from "@/components/home/FaqHome";
 import { CtaFinal } from "@/components/home/CtaFinal";
 import { OrcamentoSection } from "@/components/categoria/OrcamentoSection";
+import { FACHADA_PAISAGEM, FACHADA_RETRATO } from "@/components/home/FachadaImage";
 import { WHATSAPP_MENSAGEM_PADRAO } from "@/lib/whatsapp";
 
 export const metadata: Metadata = {
@@ -27,16 +28,12 @@ export const metadata: Metadata = {
     siteName: "Progresso Materiais de Construção",
     locale: "pt_BR",
     type: "website",
-    // TODO: imagem OG 1200×630 da home — usar a foto da fachada quando chegar
-    images: [{ url: "/images/fachada/fachada.jpg", width: 1200, height: 630 }],
+    // Recorte 16:9 da fachada para OG (a foto original é retrato 1080×1252)
+    images: [{ url: "/images/fachada/fachada-og.jpg", width: 1080, height: 607 }],
   },
   twitter: { card: "summary_large_image" },
 };
 
-// TODO: foto da fachada pendente — quando o cliente enviar, salvar em
-// public/images/fachada/fachada.jpg e definir aqui:
-// const FACHADA_SRC = "/images/fachada/fachada.jpg";
-const FACHADA_SRC = undefined;
 
 /**
  * Home (PRD §6.1) — seções + flutuante:
@@ -53,11 +50,11 @@ export default function Home() {
       <JsonLd data={faqPageSchema()} />
       <Header />
       <main className="pb-14 md:pb-0">
-        <Hero fachadaSrc={FACHADA_SRC} />
+        <Hero fachadaSrc={FACHADA_PAISAGEM} />
         <TrustBar />
         <CategoriasGrid />
         <PorQue />
-        <OndeEstamos fachadaSrc={FACHADA_SRC} />
+        <OndeEstamos fachadaSrc={FACHADA_RETRATO} />
         <OrcamentoSection
           categoria={{ slug: "home", mensagemWhatsApp: WHATSAPP_MENSAGEM_PADRAO }}
         />

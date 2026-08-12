@@ -4,14 +4,20 @@ import { whatsappUrl, WHATSAPP_MENSAGEM_PADRAO } from "@/lib/whatsapp";
  * Botão flutuante fixo de WhatsApp (PRD §6.1, COPY — Elementos globais).
  * Fundo --accent (CTA laranja — decisão do usuário; DS vence o "verde" do PRD).
  * Área de toque ≥48px. Em mobile fica acima da MobileActionBar.
+ * `mensagem`: por categoria nas páginas de categoria (SXO 12/08).
  */
-export function WhatsAppFloat() {
+export function WhatsAppFloat({
+  mensagem = WHATSAPP_MENSAGEM_PADRAO,
+}: {
+  mensagem?: string;
+}) {
   return (
     <a
-      href={whatsappUrl(WHATSAPP_MENSAGEM_PADRAO)}
+      href={whatsappUrl(mensagem)}
       target="_blank"
       rel="noopener"
       aria-label="Falar no WhatsApp"
+      data-cta="flutuante"
       className="fixed bottom-[calc(var(--space-8)+var(--space-4))] right-[var(--space-4)] z-50 flex h-14 w-14 items-center justify-center rounded-[var(--radius-pill)] bg-accent text-white shadow-lg-brand transition-colors duration-[var(--dur-fast)] ease-[var(--ease-brand)] hover:bg-accent-hover hover:text-white md:bottom-[var(--space-5)] md:right-[var(--space-5)]"
     >
       <svg

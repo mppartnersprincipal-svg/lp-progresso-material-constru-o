@@ -10,12 +10,18 @@ export const homeMeta = {
     "Loja completa de material de construção na Av. Graça Aranha, Aparecida de Goiânia. Elétrica, hidráulica, tintas, ferragens e cimento. Aberto todo dia.",
 } as const;
 
+/** CTAs globais (COPY — Elementos globais) — fonte única dos rótulos */
+export const ctaGlobal = {
+  primario: "Fazer orçamento no WhatsApp",
+  secundario: "Ligar: (62) 98517-2398",
+} as const;
+
 export const hero = {
   h1: "Material de construção em Aparecida de Goiânia",
   subtitulo:
     "Elétrica, hidráulica, tintas, ferragens, cimento e ferramentas no mesmo lugar. Loja física na Av. Graça Aranha, Jardim Nova Era — e aberta também aos domingos.",
-  ctaPrimario: "Fazer orçamento no WhatsApp",
-  ctaSecundario: "Ligar: (62) 98517-2398",
+  ctaPrimario: ctaGlobal.primario,
+  ctaSecundario: ctaGlobal.secundario,
 } as const;
 
 /** Barra de confiança — faixa horizontal, alto contraste (PRD §6.1 #3). */
@@ -59,8 +65,9 @@ export const porQue = {
 
 export const ondeEstamos = {
   h2: "Onde estamos",
-  // TODO [CONFIRMAR]: número/quadra/lote para completar o endereço
-  endereco: "Av. Graça Aranha — Jardim Nova Era, Aparecida de Goiânia - GO, 74916-379",
+  // Endereço confirmado pelo usuário em 12/08/2026 (sem número, hífen
+  // simples — forma exata da listagem pública; consistência NAP).
+  endereco: "Av. Graça Aranha - Jardim Nova Era, Aparecida de Goiânia - GO, 74916-379",
   texto:
     "Estamos na divisa com Goiânia, com acesso fácil pela Avenida Rio Verde e a poucos minutos do Buriti Shopping. Atendemos toda a região do Jardim Nova Era, Parque Amazônia, Vila Mariana, Cidade Vera Cruz, Jardim Luz e bairros vizinhos.",
   horariosTitulo: "Horário de funcionamento",

@@ -45,14 +45,55 @@ com origem e justificativa. Nenhum valor foi inventado fora da escala existente.
 | D16 | Rota /preview | Removida (e retirada do robots.txt) | Era ferramenta de revisão da Fase 1; código morto em produção |
 | D17 | Seção "Peça seu orçamento" na home | Adicionada entre "Onde estamos" e FAQ, reutilizando OrcamentoSection (slug "home" nos eventos) | Pedido do usuário (10/08) + PRD §11.1 lista o formulário como conversor terciário e a home não o tinha; copy 100% dos Elementos Globais |
 
+## Decisões do usuário (12/08/2026)
+
+| # | Decisão | Escolha |
+|---|---|---|
+| 5 | Endereço oficial | **"Av. Graça Aranha - Jardim Nova Era, Aparecida de Goiânia - GO, 74916-379"** — confirmado sem número (igual à listagem pública). Resolve o `[CONFIRMAR]` de número/quadra/lote em `nap.ts`, `config.ts` e `home.ts` |
+| 6 | Telefone | **(62) 98517-2398** — confirmado (já era o valor em uso) |
+| 7 | Instagram | **instagram.com/progressomateriais10** — adicionado ao NAP, ao rodapé (coluna Contato) e ao schema `HardwareStore.sameAs` |
+
+## Integração das fotos reais da loja (12/08/2026)
+
+| # | Item | Decisão | Justificativa |
+|---|---|---|---|
+| D18 | Fachada no hero e "Onde estamos" | `fachada.jpg` (original retrato 1080×1252) via `next/image` `fill`+`object-cover`; recorte 16:9 `fachada-og.jpg` só para Open Graph | Foto chegou do cliente em 12/08. AVIF/WebP + srcset ficam por conta do `next/image` (mesmo efeito do "exportar AVIF+WebP" do PRD §3.2, sem arquivos duplicados) |
+| D19 | Imagens de categoria: 8 de 10 trocadas por fotos reais | Recorte 16:9 manual (faixa vertical escolhida por foto) + reencode JPEG; mapeamento em `docs/creditos-imagens.md`. `impermeabilizantes` e `portas-e-janelas` seguem Pexels — nenhuma foto enviada corresponde | PRD §7.1: foto real da loja é prioridade nº 1 sobre banco de imagens |
+| D20 | Resolução abaixo do spec §7.2 (mín. 1600×900) | Aceita: fotos de WhatsApp têm 899–1600px de largura; recortes ficam entre 899×506 e 1280×720. Sem upscale | Autenticidade vence resolução (espírito do §7.1); maior superfície de render é ~570px (50vw no container 1140). Se o cliente enviar originais em alta, retrocar |
+| D21 | Peso: `material-eletrico.jpg` 123 KB e `tintas-e-pintura.jpg` 135 KB (alvo era <120 KB) | Aceito — são fotos de prateleira com alta entropia; comprimir mais degradava visivelmente | O peso servido é menor: `next/image` entrega AVIF/WebP redimensionado, não o JPEG do disco |
+| D22 | Marcas de fabricantes visíveis nas fotos (Tramontina, Votomassa, Tocantins etc.) | Aceitas | A restrição "sem marca de terceiro em destaque" do §7 vale para banco de imagens; em foto real do estoque da loja a marca é conteúdo autêntico (a própria fachada estampa Colatex) |
+
+## CTAs adicionais nas páginas de categoria (12/08/2026 — pedido do usuário)
+
+| # | Item | Decisão | Justificativa |
+|---|---|---|---|
+| D23 | Densidade de CTA nas 10 páginas de categoria | 3 pontos novos, todos com copy já aprovada dos Elementos Globais: (a) botão "Ligar" no hero ao lado do WhatsApp (mesmo par da home); (b) par WhatsApp+Ligar ao fim da lista "O que temos"; (c) banner "CTA final" (o mesmo da home, reutilizado) fechando a página com a mensagem de WhatsApp da categoria | Usuário achou os CTAs escassos entre as dobras. Nenhum texto novo foi inventado — só reuso de CTA primário/secundário e do bloco "CTA final" da copy |
+
+## Correções pós-auditoria (12/08/2026)
+
+| # | Item | Decisão | Justificativa |
+|---|---|---|---|
+| D24 | Foto de categoria com preço legível | Recorte do `cimento-e-argamassa.jpg` refeito (faixa mais baixa) excluindo o cartaz "23,90" | Preço em foto envelhece e vira alegação enganosa em landing page de Ads. Regra registrada no LEIA-ME das categorias: foto real sem preço legível |
+| D25 | og:image das categorias | `width`/`height` reais por categoria em `categorias.ts` (899×506 a 1600×900) em vez do 1600×900 fixo | 8 das 10 imagens têm dimensões menores que o valor declarado — scrapers de rede social reservam a caixa errada |
+| D26 | Fachada no hero (LCP) | Hero usa o recorte paisagem `fachada-og.jpg` (1080×607); a original retrato fica na caixa alta do "Onde estamos" | A caixa do hero é paisagem: servir o retrato inteiro baixava ~50% de pixels descartados pelo `object-cover` no elemento LCP (orçamento <2,5s em 4G, PRD §9.6) |
+| D27 | Rótulos de CTA | Fonte única `ctaGlobal` em `content/home.ts` + componente `CtaPair` (usado no hero da home, hero de categoria e fim de "O que temos") | O par WhatsApp+Ligar estava triplicado com strings hardcoded — mudança de copy editaria 3 lugares |
+| D28 | NAP com hífen simples | `"Av. Graça Aranha - Jardim Nova Era, ..."` em todas as superfícies (era travessão em `nap.ts`/`home.ts`/rodapé) | Consistência caractere por caractere com a forma confirmada pelo usuário e com a listagem pública (SEO local) |
+
 ## TODOs abertos (bloqueiam fases seguintes)
 
-- **Foto da fachada** — `Foto Fachada/` vazia. Quando chegar: mover para
-  `public/images/fachada/`, exportar AVIF+WebP com srcset 400/800/1200/1600w
-  (PRD §3.2). Bloqueia o hero e a seção "Onde estamos" da Fase 2.
 - **Logo PNG transparente + versão para fundo escuro** — pedir ao cliente.
-- **26 `[CONFIRMAR]` da copy** — mapeados como TODO em `src/content/categorias.ts`,
-  `src/lib/nap.ts` e `src/components/layout/Footer.tsx`.
+- **Fotos reais para `impermeabilizantes` e `portas-e-janelas`** — pedir ao
+  cliente; hoje seguem com banco (Pexels).
+- **`[CONFIRMAR]` restantes da copy** — como TODOs em
+  `src/content/categorias.ts` (~21), `src/content/home.ts` (3),
+  `src/lib/nap.ts` (razão social/CNPJ, domínio, LAT/LNG),
+  `src/lib/config.ts`, `src/app/politica-de-privacidade/page.tsx`,
+  `src/components/analytics/Gtm.tsx` e `src/components/layout/Footer.tsx`.
+  Endereço, telefone e Instagram já confirmados (12/08).
 - **Pendências PRD §15** — domínio, coordenadas do GBP ({LAT}/{LNG}),
   WhatsApp ativo no número, orçamento de Ads, ferragens×ferramentas
   (10 vs 9 páginas).
+- **Originais das fotos** — `Foto Fachada/` e `Fotos Loja/` estão fora do
+  git (untracked); decidir se entram no repo. `Foto Fachada/` contém também
+  um webp gerado por IA (ChatGPT, 12/08) que NÃO é foto real — não usar
+  como fachada sem decisão explícita do usuário.

@@ -1,7 +1,7 @@
 import { hero } from "@/content/home";
-import { telUrl, whatsappUrl, WHATSAPP_MENSAGEM_PADRAO } from "@/lib/whatsapp";
-import { Button } from "@/components/ui/Button";
+import { WHATSAPP_MENSAGEM_PADRAO } from "@/lib/whatsapp";
 import { Container } from "@/components/ui/Container";
+import { CtaPair } from "@/components/ui/CtaPair";
 import { DiagonalBars } from "@/components/brand/DiagonalBars";
 import { FachadaImage } from "./FachadaImage";
 
@@ -22,19 +22,7 @@ export function Hero({ fachadaSrc }: { fachadaSrc?: string }) {
           <p className="max-w-[460px] font-body text-[length:var(--text-lg)] leading-[var(--leading-normal)] text-muted-on-dark">
             {hero.subtitulo}
           </p>
-          <div className="flex flex-wrap gap-[var(--space-4)]">
-            <Button
-              href={whatsappUrl(WHATSAPP_MENSAGEM_PADRAO)}
-              size="lg"
-              target="_blank"
-              rel="noopener"
-            >
-              {hero.ctaPrimario}
-            </Button>
-            <Button href={telUrl()} variant="outline-dark" size="lg">
-              {hero.ctaSecundario}
-            </Button>
-          </div>
+          <CtaPair mensagem={WHATSAPP_MENSAGEM_PADRAO} tone="dark" origem="hero" />
         </div>
         <FachadaImage src={fachadaSrc} priority className="h-[280px] w-full lg:h-[340px]" />
       </Container>

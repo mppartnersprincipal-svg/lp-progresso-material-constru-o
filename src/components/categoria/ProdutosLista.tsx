@@ -1,4 +1,5 @@
 import { Container } from "@/components/ui/Container";
+import { CtaPair } from "@/components/ui/CtaPair";
 import { Heading } from "@/components/ui/Heading";
 import { Section } from "@/components/ui/Section";
 
@@ -6,8 +7,16 @@ import { Section } from "@/components/ui/Section";
  * "O que temos" (PRD §6.2 #5): lista de produtos em colunas no desktop;
  * em mobile vira acordeão (PRD §11.3 — evita rolagem infinita).
  * Sem JS: duas renderizações CSS-controladas (<ul> md+ / <details> mobile).
+ * CTA logo abaixo da lista (pedido do usuário, 12/08/2026): quem acabou de
+ * conferir a lista converte sem precisar rolar até o formulário.
  */
-export function ProdutosLista({ produtos }: { produtos: readonly string[] }) {
+export function ProdutosLista({
+  produtos,
+  mensagemWhatsApp,
+}: {
+  produtos: readonly string[];
+  mensagemWhatsApp: string;
+}) {
   const itens = produtos.map((p) => (
     <li
       key={p}
@@ -43,6 +52,7 @@ export function ProdutosLista({ produtos }: { produtos: readonly string[] }) {
             {itens}
           </ul>
         </details>
+        <CtaPair mensagem={mensagemWhatsApp} origem="lista-produtos" className="mt-[var(--space-6)]" />
       </Container>
     </Section>
   );

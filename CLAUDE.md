@@ -13,7 +13,8 @@ Docs de referência: `Docs/PRD-Landing-Page-Progresso.md` e `Docs/COPY-Progresso
 ## Caminhos dos ativos (nomes reais das pastas)
 
 - `Design System da Marca/` — autoridade visual do projeto (tokens em `tokens/*.css`, guidelines, componentes React de referência, kit de landing em `ui_kits/landing/`, readme com regras da marca).
-- `Foto Fachada/` — reservada para foto(s) da fachada. **Atualmente vazia** (verificado em 06/08/2026). Única imagem do repo é o logotipo (`Design System da Marca/assets/logo-progresso.jpg` e cópia em `uploads/`), JPEG 1536×1024 com fundo cinza embutido — não é fachada. Usar placeholder até a foto chegar.
+- `Foto Fachada/` — foto real da fachada, enviada pelo cliente em **12/08/2026** e integrada (hero, "Onde estamos" e OG da home; arquivos otimizados em `public/images/fachada/`).
+- `Fotos Loja/Fotos/` — 13 fotos reais do interior da loja (12/08/2026). 8 viraram imagens de categoria (recorte 16:9 em `public/images/categorias/`); mapeamento e reservas em `docs/creditos-imagens.md`.
 
 ## Tokens do design system (fonte: `Design System da Marca/tokens/`)
 
@@ -86,15 +87,16 @@ Regras: máx. 2 fundos por página (claro + navy); laranja nunca como fundo de s
 - Conteúdo original e substancial em cada página (não é doorway page)
 - Navegação clara entre categorias
 
-## Decisões já tomadas pelo usuário (06/08/2026)
+## Decisões já tomadas pelo usuário
 
 - **Nome oficial:** "Progresso Materiais de Construção" (PRD/copy mantidos; logo segue como está)
 - **CTA WhatsApp:** laranja `--accent #E8731B` (DS vence o "verde" do PRD §11.1)
 - **Fase 1 aprovada e executada.** Log completo de decisões e derivações em `docs/decisoes-design.md`
+- **NAP confirmado (12/08/2026):** endereço "Av. Graça Aranha - Jardim Nova Era, Aparecida de Goiânia - GO, 74916-379" (sem número, como na listagem pública) e telefone (62) 98517-2398. Instagram oficial: `instagram.com/progressomateriais10` (no rodapé e no `sameAs` do schema)
 
 ## Pendências abertas (não resolver por conta própria)
 
-- Foto da fachada — `Foto Fachada/` vazia; virá do cliente (bloqueia Fase 2). TODO em `public/images/fachada/LEIA-ME.md`
-- 26 `[CONFIRMAR]` da copy — como TODOs em `src/content/categorias.ts`, `src/lib/nap.ts` e `src/components/layout/Footer.tsx`
+- Fotos reais para as categorias `impermeabilizantes` e `portas-e-janelas` — seguem com banco (Pexels); pedir ao cliente
+- `[CONFIRMAR]` restantes da copy — como TODOs em `src/content/categorias.ts`, `src/content/home.ts`, `src/lib/nap.ts` e `src/components/layout/Footer.tsx` (endereço/telefone/Instagram já confirmados em 12/08)
 - Pendências do PRD §15: domínio, `{LAT}`/`{LNG}` do GBP, WhatsApp ativo no número, razão social/CNPJ, orçamento de Ads, ferragens×ferramentas (10 vs 9 páginas)
 - Logo PNG transparente + versão para fundo escuro (pedir ao cliente)

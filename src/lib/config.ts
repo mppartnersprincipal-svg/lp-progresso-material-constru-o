@@ -14,14 +14,26 @@ export const DOMINIO = (
   process.env.SITE_URL ?? "https://DOMINIO-A-CONFIRMAR.com.br"
 ).replace(/\/$/, "");
 
+// Trava de deploy: sem SITE_URL, o placeholder vazaria silenciosamente para
+// schema, sitemap, robots e canonicals de produção. Vercel define VERCEL_ENV;
+// NODE_ENV=production também vale para `next build` local de produção real —
+// para build local de teste, exportar SITE_URL=http://localhost:3000.
+if (process.env.VERCEL_ENV === "production" && !process.env.SITE_URL) {
+  throw new Error(
+    "SITE_URL não configurada — obrigatória em produção (schema, sitemap, robots, canonicals).",
+  );
+}
+
 export const SITE = {
   dominio: DOMINIO,
   nome: NAP.nome,
   telefoneE164: NAP.telefoneE164,
   priceRange: "$$",
   endereco: {
-    // TODO [CONFIRMAR]: número/quadra/lote para completar o endereço
-    streetAddress: NAP.logradouro,
+    // Endereço confirmado pelo usuário em 12/08/2026 (sem número, como na
+    // listagem pública da loja). Bairro no streetAddress: PostalAddress não
+    // tem campo próprio de bairro e o sinal hiperlocal importa (SEO local).
+    streetAddress: `${NAP.logradouro} - ${NAP.bairro}`,
     addressLocality: NAP.cidade,
     addressRegion: NAP.uf,
     postalCode: NAP.cep,

@@ -1,17 +1,23 @@
 import Image from "next/image";
 
 /**
- * Foto da fachada — recebe a imagem por prop para troca simples quando o
- * arquivo chegar do cliente.
- *
- * TODO: foto da fachada pendente (Foto Fachada/ vazia em 06/08/2026).
- * Quando chegar: salvar em public/images/fachada/fachada.jpg e passar
- * src="/images/fachada/fachada.jpg" nos dois usos (Hero e OndeEstamos).
- * Ver public/images/fachada/LEIA-ME.md. Sem filtros pesados nem overlays
- * escuros que descaracterizem a loja (PRD §3.2).
+ * Foto da fachada — recebe a imagem por prop (Hero e OndeEstamos).
+ * Foto real do cliente em public/images/fachada/fachada.jpg (12/08/2026).
+ * Sem filtros pesados nem overlays escuros que descaracterizem a loja
+ * (PRD §3.2). O placeholder abaixo permanece como fallback de src ausente.
  */
 export const FACHADA_ALT =
   "Fachada da Progresso Materiais de Construção na Av. Graça Aranha, Jardim Nova Era, Aparecida de Goiânia";
+
+/** Original retrato 1080×1252 — para caixas altas (coluna do OndeEstamos). */
+export const FACHADA_RETRATO = "/images/fachada/fachada.jpg";
+
+/**
+ * Recorte 16:9 1080×607 (letreiro + frente da loja) — para caixas paisagem
+ * (hero, LCP: evita baixar/decodificar a metade retrato que o object-cover
+ * descartaria) e para o og:image.
+ */
+export const FACHADA_PAISAGEM = "/images/fachada/fachada-og.jpg";
 
 export function FachadaImage({
   src,
@@ -33,6 +39,7 @@ export function FachadaImage({
           alt={FACHADA_ALT}
           fill
           priority={priority}
+          fetchPriority={priority ? "high" : undefined}
           sizes="(max-width: 1024px) 100vw, 50vw"
           className="object-cover"
         />

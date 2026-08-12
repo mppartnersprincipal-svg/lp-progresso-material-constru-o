@@ -1,14 +1,15 @@
-# TODO — Foto da fachada
+# Foto da fachada — integrada em 12/08/2026
 
-Pasta reservada para a(s) foto(s) da fachada da loja, que virão do cliente
-(`Foto Fachada/` na raiz está vazia em 06/08/2026).
+Foto real enviada pelo cliente (`Foto Fachada/` na raiz, 12/08/2026).
 
-Quando a foto chegar (PRD §3.2):
+- `fachada.jpg` — original 1080×1252 (retrato), usada no hero e na seção
+  "Onde estamos" via `next/image` (`fill` + `object-cover`; AVIF/WebP e
+  `srcset` automáticos).
+- `fachada-og.jpg` — recorte 16:9 1080×607 (faixa do letreiro + frente da
+  loja) para Open Graph da home.
+- `alt` fixo em `src/components/home/FachadaImage.tsx` (`FACHADA_ALT`),
+  com sinal geográfico (PRD §3.2).
+- Sem filtros nem overlays que descaracterizem a loja.
 
-- Colocar o original aqui e servir via `next/image` (AVIF/WebP automático)
-  com `srcset` responsivo 400w / 800w / 1200w / 1600w.
-- `alt` obrigatório: "Fachada da Progresso Materiais de Construção na
-  Av. Graça Aranha, Jardim Nova Era, Aparecida de Goiânia".
-- Uso obrigatório na seção "Onde estamos"; recomendado no hero se resolução
-  e enquadramento permitirem.
-- Sem filtros pesados nem overlays escuros que descaracterizem a loja.
+Se o cliente enviar uma foto em maior resolução/paisagem no futuro,
+substituir os dois arquivos mantendo os mesmos nomes.

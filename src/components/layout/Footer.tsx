@@ -11,7 +11,7 @@ import { Wordmark } from "@/components/brand/Wordmark";
 export function Footer() {
   const ano = new Date().getFullYear();
   return (
-    <footer className="bg-surface-darker py-[var(--space-8)]">
+    <footer data-cta="rodape" className="bg-surface-darker py-[var(--space-8)]">
       <Container>
         <div className="grid grid-cols-1 gap-[var(--space-6)] sm:grid-cols-2 lg:grid-cols-4">
           <div>
@@ -43,7 +43,7 @@ export function Footer() {
               Contato
             </h2>
             <address className="mt-[var(--space-4)] font-body text-[length:var(--text-sm)] not-italic leading-[var(--leading-normal)] text-on-dark">
-              {NAP.logradouro} — {NAP.bairro}
+              {NAP.logradouro} - {NAP.bairro}
               <br />
               {NAP.cidade} - {NAP.uf}, {NAP.cep}
               <br />
@@ -58,6 +58,15 @@ export function Footer() {
                 className="text-on-dark hover:text-orange-400"
               >
                 WhatsApp
+              </a>
+              <br />
+              <a
+                href={NAP.instagram}
+                target="_blank"
+                rel="noopener"
+                className="text-on-dark hover:text-orange-400"
+              >
+                Instagram {NAP.instagramHandle}
               </a>
             </address>
           </div>

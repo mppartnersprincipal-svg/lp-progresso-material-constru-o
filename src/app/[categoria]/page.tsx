@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import { notFound } from "next/navigation";
 import { categorias, getCategoria } from "@/content/categorias";
 import { DOMINIO } from "@/lib/config";
-import { breadcrumbSchema, faqPageSchemaFromItems } from "@/lib/schema";
+import { breadcrumbSchema, faqPageSchemaFromItems, hardwareStoreSchema } from "@/lib/schema";
 import { JsonLd } from "@/components/seo/JsonLd";
 import { TrackViewCategoria } from "@/components/analytics/TrackViewCategoria";
 import { Header } from "@/components/layout/Header";
@@ -11,10 +11,13 @@ import { WhatsAppFloat } from "@/components/layout/WhatsAppFloat";
 import { MobileActionBar } from "@/components/layout/MobileActionBar";
 import { Breadcrumb } from "@/components/categoria/Breadcrumb";
 import { CategoriaHero } from "@/components/categoria/CategoriaHero";
+import { TrustBar } from "@/components/home/TrustBar";
 import { ProdutosLista } from "@/components/categoria/ProdutosLista";
 import { DiferenciaisCategoria } from "@/components/categoria/DiferenciaisCategoria";
 import { OrcamentoSection } from "@/components/categoria/OrcamentoSection";
 import { OndeEstamos } from "@/components/home/OndeEstamos";
+import { CtaFinal } from "@/components/home/CtaFinal";
+import { FACHADA_RETRATO } from "@/components/home/FachadaImage";
 import { TambemTemos } from "@/components/categoria/TambemTemos";
 import { FaqList } from "@/components/ui/FaqList";
 import { Container } from "@/components/ui/Container";
@@ -31,9 +34,6 @@ export const dynamicParams = false;
 export function generateStaticParams() {
   return categorias.map((c) => ({ categoria: c.slug }));
 }
-
-// TODO: foto da fachada pendente — mesmo mecanismo da home (src/app/page.tsx).
-const FACHADA_SRC = undefined;
 
 type Props = { params: Promise<{ categoria: string }> };
 
@@ -53,9 +53,11 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
       siteName: "Progresso Materiais de Construção",
       locale: "pt_BR",
       type: "website",
-      // TODO: imagem OG 1200×630 pendente (PRD §8.1) — hoje aponta para a
-      // imagem da categoria, que ainda não existe (Fase 3 de imagens).
-      images: [{ url: `${DOMINIO}${cat.imagem.src}`, width: 1600, height: 900 }],
+      // Imagem da categoria (16:9) — 8 de 10 são fotos reais da loja
+      // (12/08/2026); dimensões reais por categoria em categorias.ts.
+      images: [
+        { url: `${DOMINIO}${cat.imagem.src}`, width: cat.imagem.width, height: cat.imagem.height },
+      ],
     },
     twitter: { card: "summary_large_image" },
   };
@@ -68,13 +70,18 @@ export default async function CategoriaPage({ params }: Props) {
 
   return (
     <>
+      {/* Entidade local também nas páginas de categoria (landing pages de
+          Ads independentes que exibem o NAP completo) — mesmo @id da home,
+          o Google deduplica. */}
+      <JsonLd data={hardwareStoreSchema()} />
       <JsonLd data={breadcrumbSchema(cat)} />
       <JsonLd data={faqPageSchemaFromItems(cat.faq)} />
       <TrackViewCategoria slug={cat.slug} />
-      <Header />
+      <Header mensagem={cat.mensagemWhatsApp} />
       <main className="pb-14 md:pb-0">
         <Breadcrumb nomeCategoria={cat.nome} />
         <CategoriaHero categoria={cat} />
+        <TrustBar />
         {/* Introdução (PRD §6.2 #4): 80–120 palavras únicas, keyword nos
             primeiros 100 caracteres do corpo (message match, PRD §9.6) */}
         <Section tone="light" className="!py-[var(--space-7)]">
@@ -84,10 +91,10 @@ export default async function CategoriaPage({ params }: Props) {
             </p>
           </Container>
         </Section>
-        <ProdutosLista produtos={cat.produtos} />
+        <ProdutosLista produtos={cat.produtos} mensagemWhatsApp={cat.mensagemWhatsApp} />
         <DiferenciaisCategoria diferenciais={cat.diferenciais} />
         <OrcamentoSection categoria={cat} />
-        <OndeEstamos fachadaSrc={FACHADA_SRC} />
+        <OndeEstamos fachadaSrc={FACHADA_RETRATO} />
         <Section tone="light" id="faq">
           <Container className="max-w-[820px]">
             <Heading level={2}>Perguntas frequentes</Heading>
@@ -97,10 +104,11 @@ export default async function CategoriaPage({ params }: Props) {
           </Container>
         </Section>
         <TambemTemos correlatas={cat.correlatas} />
+        <CtaFinal mensagem={cat.mensagemWhatsApp} />
       </main>
       <Footer />
-      <WhatsAppFloat />
-      <MobileActionBar />
+      <WhatsAppFloat mensagem={cat.mensagemWhatsApp} />
+      <MobileActionBar mensagem={cat.mensagemWhatsApp} />
     </>
   );
 }

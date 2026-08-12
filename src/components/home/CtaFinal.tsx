@@ -7,10 +7,12 @@ import { SkewBanner } from "@/components/brand/SkewBanner";
 /**
  * CTA final (PRD §6.1 #8): bloco de conversão em banner skewado laranja —
  * uso permitido pelo DS (banners/CTAs, nunca seção inteira).
+ * Reutilizado nas páginas de categoria (12/08/2026) com a mensagem de
+ * WhatsApp daquela linha via prop.
  */
-export function CtaFinal() {
+export function CtaFinal({ mensagem = WHATSAPP_MENSAGEM_PADRAO }: { mensagem?: string }) {
   return (
-    <section className="bg-surface-page pb-[var(--space-9)]">
+    <section data-cta="cta-final" className="bg-surface-page pb-[var(--space-9)]">
       <Container>
         <SkewBanner className="px-[var(--space-6)] py-[var(--space-6)] lg:px-[var(--space-8)]">
           <div className="flex flex-col items-start justify-between gap-[var(--space-5)] lg:flex-row lg:items-center">
@@ -23,7 +25,7 @@ export function CtaFinal() {
               </p>
             </div>
             <Button
-              href={whatsappUrl(WHATSAPP_MENSAGEM_PADRAO)}
+              href={whatsappUrl(mensagem)}
               variant="secondary"
               size="lg"
               target="_blank"

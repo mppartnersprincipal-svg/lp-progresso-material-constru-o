@@ -1,7 +1,6 @@
 import type { Categoria } from "@/content/categorias";
-import { whatsappUrl } from "@/lib/whatsapp";
-import { Button } from "@/components/ui/Button";
 import { Container } from "@/components/ui/Container";
+import { CtaPair } from "@/components/ui/CtaPair";
 import { DiagonalBars } from "@/components/brand/DiagonalBars";
 import { CategoriaImagem } from "./CategoriaImagem";
 
@@ -21,14 +20,7 @@ export function CategoriaHero({ categoria }: { categoria: Categoria }) {
           <p className="max-w-[460px] font-body text-[length:var(--text-lg)] leading-[var(--leading-normal)] text-muted-on-dark">
             {categoria.heroSubtitulo}
           </p>
-          <Button
-            href={whatsappUrl(categoria.mensagemWhatsApp)}
-            size="lg"
-            target="_blank"
-            rel="noopener"
-          >
-            Fazer orçamento no WhatsApp
-          </Button>
+          <CtaPair mensagem={categoria.mensagemWhatsApp} tone="dark" origem="hero" />
         </div>
         <CategoriaImagem categoria={categoria} priority />
       </Container>

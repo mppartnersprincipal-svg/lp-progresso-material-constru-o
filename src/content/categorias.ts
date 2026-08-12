@@ -21,6 +21,9 @@ export type Categoria = {
   imagem: {
     src: string;
     alt: string;
+    /** Dimensões reais do arquivo em px (usadas no og:image) */
+    width: number;
+    height: number;
     creditoObrigatorio?: string;
   };
   produtos: string[];
@@ -31,7 +34,9 @@ export type Categoria = {
   mensagemWhatsApp: string;
 };
 
-// Padrão de alt (PRD §7.2). Imagens ainda não existem — Fase 3.
+// Padrão de alt (PRD §7.2) — usado nas 2 categorias que ainda estão com
+// imagem de banco (Pexels). As demais 8 usam fotos reais da loja (12/08/2026)
+// com alt específico do que a foto mostra. Ver docs/creditos-imagens.md.
 const alt = (nome: string) =>
   `${nome} disponível na Progresso Materiais de Construção em Aparecida de Goiânia`;
 
@@ -50,7 +55,9 @@ export const categorias: Categoria[] = [
       "Material elétrico não admite improviso: bitola errada esquenta, disjuntor mal dimensionado desarma e instalação fora de norma vira problema caro depois. Na Progresso você encontra a linha elétrica completa em Aparecida de Goiânia — de fio flexível e cabo PP a quadros de distribuição, DR e DPS —, com atendimento de quem sabe o que cada obra pede. Se você tem a lista do eletricista, manda no WhatsApp que conferimos item por item.",
     imagem: {
       src: "/images/categorias/material-eletrico.jpg",
-      alt: alt("Material elétrico"),
+      alt: "Parede de tomadas, interruptores e módulos elétricos na loja da Progresso Materiais de Construção em Aparecida de Goiânia",
+      width: 1280,
+      height: 720,
     },
     produtos: [
       "Fios e cabos flexíveis (1,5mm · 2,5mm · 4mm · 6mm · 10mm)",
@@ -116,7 +123,9 @@ export const categorias: Categoria[] = [
       "Vazamento não espera horário comercial. A Progresso mantém a linha hidráulica completa em Aparecida de Goiânia — tubos e conexões de PVC soldável, roscável e de esgoto, registros, caixas d'água, engates e vedantes — para quem está tocando a obra e para quem só precisa resolver o cano que estourou. Estamos abertos de segunda a domingo, e no sábado e no domingo pela manhã, quando quase toda loja da região já fechou.",
     imagem: {
       src: "/images/categorias/material-hidraulico.jpg",
-      alt: alt("Material hidráulico"),
+      alt: "Expositor de itens hidráulicos — torneiras, sifões e engates flexíveis — na loja da Progresso Materiais de Construção em Aparecida de Goiânia",
+      width: 899,
+      height: 506,
     },
     produtos: [
       "Tubos e conexões PVC soldável (água fria)",
@@ -181,7 +190,9 @@ export const categorias: Categoria[] = [
       "Pintura é a etapa que aparece — e a que mais decepciona quando o material é errado. Tinta de fachada aplicada em área interna desperdiça dinheiro; tinta interna na fachada descasca em um ano. Na Progresso você encontra tintas acrílicas, látex PVA, esmaltes sintéticos, massas, texturas e todo o material de preparo em Aparecida de Goiânia, com orientação sobre qual linha usar em cada superfície e quanto comprar para a metragem da sua obra.",
     imagem: {
       src: "/images/categorias/tintas-e-pintura.jpg",
-      alt: alt("Tintas e material de pintura"),
+      alt: "Expositor de pincéis, rolos, fitas e acessórios de pintura na loja da Progresso Materiais de Construção em Aparecida de Goiânia",
+      width: 1200,
+      height: 675,
     },
     produtos: [
       "Tinta acrílica para interior e exterior (fosca, acetinada e semibrilho)",
@@ -252,6 +263,8 @@ export const categorias: Categoria[] = [
     imagem: {
       src: "/images/categorias/impermeabilizantes.jpg",
       alt: alt("Impermeabilizantes"),
+      width: 1600,
+      height: 900,
     },
     produtos: [
       "Manta asfáltica aluminizada e manta líquida",
@@ -307,7 +320,7 @@ export const categorias: Categoria[] = [
     nome: "Metais e Louças Sanitárias",
     cardTexto: "Vasos, cubas, torneiras, chuveiros e acabamentos",
     h1: "Metais e louças sanitárias em Aparecida de Goiânia",
-    metaTitle: "Metais e Louças Sanitárias em Aparecida de Goiânia",
+    metaTitle: "Metais e Louças em Aparecida de Goiânia | Progresso",
     metaDescription:
       "Vaso sanitário, cuba, torneira, chuveiro e acabamentos em Aparecida de Goiânia. Loja física no Jardim Nova Era, aberta inclusive aos domingos.",
     heroSubtitulo:
@@ -316,7 +329,9 @@ export const categorias: Categoria[] = [
       "O banheiro e a cozinha são onde o acabamento fica à vista todo dia — e onde a peça de qualidade duvidosa aparece rápido, em forma de gotejamento e mancha. Na Progresso você encontra louças e metais sanitários em Aparecida de Goiânia: vasos com caixa acoplada, lavatórios, cubas, tanques, torneiras, misturadores, chuveiros e todo o acabamento de registro. E, como também temos a linha hidráulica completa, a instalação sai da loja com tudo que precisa — inclusive o sifão e o engate que sempre faltam.",
     imagem: {
       src: "/images/categorias/metais-e-loucas-sanitarias.jpg",
-      alt: alt("Metais e louças sanitárias"),
+      alt: "Parede de torneiras, registros e acabamentos da linha de metais na loja da Progresso Materiais de Construção em Aparecida de Goiânia",
+      width: 899,
+      height: 506,
     },
     produtos: [
       "Vasos sanitários com caixa acoplada e convencionais",
@@ -383,7 +398,9 @@ export const categorias: Categoria[] = [
       "Ferramenta boa não é gasto, é o que faz o serviço sair no prazo e sem retrabalho. Na Progresso você encontra ferramentas em Aparecida de Goiânia para o profissional que trabalha todo dia e para quem só precisa resolver o conserto do fim de semana: furadeiras, esmerilhadeiras, martelos, alicates, chaves, trenas, níveis e equipamento de proteção. E, como aqui você também compra o material, sai da loja com a broca, o parafuso e a bucha certos para o serviço.",
     imagem: {
       src: "/images/categorias/ferramentas.jpg",
-      alt: alt("Ferramentas"),
+      alt: "Parede de ferramentas manuais — serrotes, chaves de fenda, alicates e pistolas — no balcão da Progresso Materiais de Construção em Aparecida de Goiânia",
+      width: 899,
+      height: 506,
     },
     produtos: [
       "Furadeiras, parafusadeiras e marteletes",
@@ -449,7 +466,9 @@ export const categorias: Categoria[] = [
       "É sempre a peça de dois reais que para o serviço: o parafuso de medida esquisita, a bucha que não segura, a dobradiça que não é a mesma da porta. A ferragista da Progresso, em Aparecida de Goiânia, existe para isso — parafusos, buchas, pregos, arruelas, dobradiças, fechaduras, cadeados, abraçadeiras e fixação em geral, com variedade de medidas. Traga a peça velha ou mande a foto pelo WhatsApp: identificamos a bitola e o modelo antes de você sair de casa.",
     imagem: {
       src: "/images/categorias/ferragens.jpg",
-      alt: alt("Ferragens"),
+      alt: "Gaveteiros com parafusos, buchas, porcas e fixadores avulsos na loja da Progresso Materiais de Construção em Aparecida de Goiânia",
+      width: 899,
+      height: 506,
     },
     produtos: [
       "Parafusos para madeira, metal, drywall e concreto",
@@ -504,7 +523,7 @@ export const categorias: Categoria[] = [
     nome: "Areia e Brita Ensacada",
     cardTexto: "Areia, brita, pedrisco e pó de pedra em sacos",
     h1: "Areia e brita ensacada em Aparecida de Goiânia",
-    metaTitle: "Areia e Brita Ensacada em Aparecida de Goiânia",
+    metaTitle: "Areia e Brita Ensacada em Aparecida de Goiânia | Progresso",
     metaDescription:
       "Areia, brita, pedrisco e pó de pedra ensacados em Aparecida de Goiânia. Compre a quantidade que a obra precisa, no Jardim Nova Era.",
     heroSubtitulo:
@@ -513,7 +532,9 @@ export const categorias: Categoria[] = [
       "Nem toda obra comporta uma caçamba de areia parada na calçada por três dias. Para reforma, reparo e serviço pequeno, o agregado ensacado resolve: você compra a quantidade exata, transporta no porta-malas, armazena sem sujeira e não paga por sobra. Na Progresso você encontra areia, brita, pedrisco e pó de pedra ensacados em Aparecida de Goiânia — e, na mesma compra, o cimento e a argamassa que completam o traço.",
     imagem: {
       src: "/images/categorias/areia-e-brita-ensacada.jpg",
-      alt: alt("Areia e brita ensacada"),
+      alt: "Sacos de areia e brita ensacadas empilhados em palete no depósito da Progresso Materiais de Construção em Aparecida de Goiânia",
+      width: 1200,
+      height: 675,
     },
     produtos: [
       "Areia fina ensacada (reboco e assentamento)",
@@ -576,7 +597,9 @@ export const categorias: Categoria[] = [
       "Cimento e argamassa são o item que mais pesa no orçamento de obra por volume comprado, e onde a escolha errada custa caro depois: argamassa AC-I aplicada em fachada solta, porcelanato assentado com colante inadequado descola. Na Progresso você encontra cimento e argamassas em Aparecida de Goiânia — do saco de cimento à argamassa colante AC-III, rejunte, cal e gesso —, com orientação sobre qual tipo usar em cada aplicação. Para quantidade maior, chame no WhatsApp e consulte a condição.",
     imagem: {
       src: "/images/categorias/cimento-e-argamassa.jpg",
-      alt: alt("Cimento e argamassas"),
+      alt: "Sacos de cimento empilhados ao lado de tijolos e argamassas no depósito da Progresso Materiais de Construção em Aparecida de Goiânia",
+      width: 899,
+      height: 506,
     },
     produtos: [
       // TODO [CONFIRMAR]: além do CP II, quais tipos de cimento (CP ...)?
@@ -646,6 +669,8 @@ export const categorias: Categoria[] = [
     imagem: {
       src: "/images/categorias/portas-e-janelas.jpg",
       alt: alt("Portas e janelas"),
+      width: 1600,
+      height: 900,
     },
     produtos: [
       "Portas de madeira semi-ocas e maciças",

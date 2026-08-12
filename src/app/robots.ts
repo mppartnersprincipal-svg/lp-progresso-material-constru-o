@@ -11,7 +11,9 @@ export default function robots(): MetadataRoute.Robots {
     rules: {
       userAgent: "*",
       allow: "/",
-      disallow: "/obrigado",
+      // /obrigado sai do índice via meta noindex (obrigado/page.tsx), não
+      // por Disallow: bloquear no robots impediria o Google de LER o
+      // noindex, e a URL poderia indexar "sem descrição" se ganhasse link.
     },
     sitemap: `${DOMINIO}/sitemap.xml`,
   };
