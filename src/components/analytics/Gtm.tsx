@@ -1,8 +1,8 @@
 import Script from "next/script";
 
-// TODO [CONFIRMAR]: criar o container GTM e definir NEXT_PUBLIC_GTM_ID
-// (ex.: GTM-XXXXXXX) no ambiente de deploy. Sem o ID, nenhum script de
-// terceiros é carregado — os eventos ficam enfileirados no dataLayer.
+// Container GTM-TXH6X493 (criado pelo usuário em 13/08/2026). O ID entra por
+// env em BUILD (.env.local no dev; painel da Vercel no deploy). Sem o ID,
+// nenhum script de terceiros carrega — eventos ficam no dataLayer.
 const GTM_ID = process.env.NEXT_PUBLIC_GTM_ID;
 
 /**
