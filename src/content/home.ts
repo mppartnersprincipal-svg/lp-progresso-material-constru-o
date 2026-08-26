@@ -17,7 +17,7 @@ export const ctaGlobal = {
 } as const;
 
 export const hero = {
-  h1: "Material de construção em Aparecida de Goiânia",
+  h1: "Progresso Materiais de Construção em Aparecida de Goiânia",
   subtitulo:
     "Elétrica, hidráulica, tintas, ferragens, cimento e ferramentas no mesmo lugar. Loja física na Av. Graça Aranha, Jardim Nova Era — e aberta também aos domingos.",
   ctaPrimario: ctaGlobal.primario,

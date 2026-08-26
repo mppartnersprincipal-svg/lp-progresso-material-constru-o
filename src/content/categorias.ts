@@ -60,7 +60,7 @@ export const categorias: Categoria[] = [
     slug: "material-eletrico",
     nome: "Material Elétrico",
     cardTexto: "Fios, disjuntores, quadros, tomadas e iluminação",
-    h1: "Material elétrico em Aparecida de Goiânia",
+    h1: "Progresso Materiais Elétricos em Aparecida de Goiânia",
     metaTitle: "Material Elétrico em Aparecida de Goiânia | Progresso",
     // Keywords do grupo de anúncios (Google Ads, 26/08/2026) distribuídas na
     // copy: "loja de material elétrico", "materiais elétricos", "cabos
@@ -160,7 +160,7 @@ export const categorias: Categoria[] = [
     slug: "material-hidraulico",
     nome: "Material Hidráulico",
     cardTexto: "Tubos, conexões, registros e caixas d'água",
-    h1: "Material hidráulico em Aparecida de Goiânia",
+    h1: "Progresso Materiais Hidráulicos em Aparecida de Goiânia",
     metaTitle: "Material Hidráulico em Aparecida de Goiânia | Progresso",
     metaDescription:
       "Tubos e conexões PVC, registros, caixas d'água e vedantes em Aparecida de Goiânia. Loja física no Jardim Nova Era, aberta inclusive aos domingos.",
@@ -227,7 +227,7 @@ export const categorias: Categoria[] = [
     slug: "tintas-e-pintura",
     nome: "Tintas e Pintura",
     cardTexto: "Tintas, massas, texturas, rolos e pincéis",
-    h1: "Tintas e material de pintura em Aparecida de Goiânia",
+    h1: "Progresso Tintas e Pinturas em Aparecida de Goiânia",
     metaTitle: "Loja de Tintas em Aparecida de Goiânia | Progresso",
     metaDescription:
       "Tinta acrílica, látex, esmalte, massa corrida, textura, rolos e pincéis em Aparecida de Goiânia. Loja física no Jardim Nova Era. Orçamento no WhatsApp.",
@@ -322,7 +322,7 @@ export const categorias: Categoria[] = [
     slug: "impermeabilizantes",
     nome: "Impermeabilizantes",
     cardTexto: "Mantas, argamassas poliméricas e selantes",
-    h1: "Impermeabilizantes em Aparecida de Goiânia",
+    h1: "Progresso Impermeabilizantes em Aparecida de Goiânia",
     metaTitle: "Impermeabilizantes em Aparecida de Goiânia | Progresso",
     metaDescription:
       "Manta asfáltica, argamassa polimérica, impermeabilizante acrílico e selantes em Aparecida de Goiânia. Loja física no Jardim Nova Era.",
@@ -389,7 +389,7 @@ export const categorias: Categoria[] = [
     slug: "metais-e-loucas-sanitarias",
     nome: "Metais e Louças Sanitárias",
     cardTexto: "Vasos, cubas, torneiras, chuveiros e acabamentos",
-    h1: "Metais e louças sanitárias em Aparecida de Goiânia",
+    h1: "Progresso Metais e Louças Sanitárias em Aparecida de Goiânia",
     metaTitle: "Metais e Louças em Aparecida de Goiânia | Progresso",
     metaDescription:
       "Vaso sanitário, cuba, torneira, chuveiro e acabamentos em Aparecida de Goiânia. Loja física no Jardim Nova Era, aberta inclusive aos domingos.",
@@ -458,7 +458,7 @@ export const categorias: Categoria[] = [
     slug: "ferramentas",
     nome: "Ferramentas",
     cardTexto: "Manuais, elétricas e equipamentos de proteção",
-    h1: "Ferramentas em Aparecida de Goiânia",
+    h1: "Progresso Ferramentas em Aparecida de Goiânia",
     metaTitle: "Loja de Ferramentas em Aparecida de Goiânia | Progresso",
     metaDescription:
       "Furadeira, esmerilhadeira, martelo, alicate, trena e EPI em Aparecida de Goiânia. Ferramentas manuais e elétricas no Jardim Nova Era.",
@@ -526,7 +526,7 @@ export const categorias: Categoria[] = [
     slug: "ferragens",
     nome: "Ferragens",
     cardTexto: "Parafusos, buchas, dobradiças, fechaduras e cadeados",
-    h1: "Ferragista completa em Aparecida de Goiânia",
+    h1: "Progresso Ferragista Completa em Aparecida de Goiânia",
     metaTitle: "Ferragista em Aparecida de Goiânia | Progresso",
     metaDescription:
       "Parafusos, buchas, pregos, dobradiças, fechaduras e cadeados em Aparecida de Goiânia. Ferragista completa no Jardim Nova Era, aberta todo dia.",
@@ -592,7 +592,7 @@ export const categorias: Categoria[] = [
     slug: "areia-e-brita-ensacada",
     nome: "Areia e Brita Ensacada",
     cardTexto: "Areia, brita, pedrisco e pó de pedra em sacos",
-    h1: "Areia e brita ensacada em Aparecida de Goiânia",
+    h1: "Progresso Areia e Brita Ensacada em Aparecida de Goiânia",
     metaTitle: "Areia e Brita Ensacada em Aparecida de Goiânia | Progresso",
     metaDescription:
       "Areia, brita, pedrisco e pó de pedra ensacados em Aparecida de Goiânia. Compre a quantidade que a obra precisa, no Jardim Nova Era.",
@@ -657,7 +657,7 @@ export const categorias: Categoria[] = [
     slug: "cimento-e-argamassa",
     nome: "Cimento e Argamassas",
     cardTexto: "Cimento, argamassa colante, rejunte e cal",
-    h1: "Cimento e argamassas em Aparecida de Goiânia",
+    h1: "Progresso Cimento e Argamassas em Aparecida de Goiânia",
     metaTitle: "Cimento e Argamassa em Aparecida de Goiânia | Progresso",
     metaDescription:
       "Cimento, argamassa colante AC-I, AC-II e AC-III, rejunte e cal em Aparecida de Goiânia. Loja física no Jardim Nova Era. Consulte o preço no WhatsApp.",
@@ -728,7 +728,7 @@ export const categorias: Categoria[] = [
     slug: "portas-e-janelas",
     nome: "Portas e Janelas",
     cardTexto: "Portas, batentes, janelas e guarnições",
-    h1: "Portas e janelas em Aparecida de Goiânia",
+    h1: "Progresso Portas e Janelas em Aparecida de Goiânia",
     metaTitle: "Portas e Janelas em Aparecida de Goiânia | Progresso",
     metaDescription:
       "Portas de madeira, batentes, janelas de alumínio e guarnições em Aparecida de Goiânia. Loja física no Jardim Nova Era, aberta inclusive aos domingos.",
