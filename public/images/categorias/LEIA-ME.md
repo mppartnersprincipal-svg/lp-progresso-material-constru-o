@@ -1,6 +1,9 @@
 # Imagens das categorias
 
 1 imagem por categoria, nomeada `{slug}.jpg` (ex.: `material-eletrico.jpg`).
+Fotos extras da seção opcional "Na loja" (campo `galeria` em
+`categorias.ts`) seguem `{slug}-{assunto}.jpg`, retrato 3:4 (ex.:
+`material-eletrico-iluminacao.jpg`).
 Prioridade de origem (PRD §7.1): 1º fotos reais da loja; 2º Pexels/Pixabay.
 
 **12/08/2026 — 8 de 10 categorias usam fotos reais da loja** (originais em
@@ -11,6 +14,8 @@ Ainda em banco de imagens (Pexels), aguardando foto real:
 
 - `impermeabilizantes.jpg`
 - `portas-e-janelas.jpg`
+- `tintas-e-pintura-latas.jpg` e `tintas-e-pintura-pinceis.jpg` (galeria
+  "Na loja", 26/08 — latas de tinta ilustrativas)
 
 Spec (PRD §7.2): 16:9, ~120 KB otimizada (o `next/image` converte para
 AVIF/WebP no serve).

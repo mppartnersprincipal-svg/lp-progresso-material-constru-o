@@ -14,6 +14,7 @@ import { CategoriaHero } from "@/components/categoria/CategoriaHero";
 import { TrustBar } from "@/components/home/TrustBar";
 import { ProdutosLista } from "@/components/categoria/ProdutosLista";
 import { DiferenciaisCategoria } from "@/components/categoria/DiferenciaisCategoria";
+import { GaleriaCategoria } from "@/components/categoria/GaleriaCategoria";
 import { OrcamentoSection } from "@/components/categoria/OrcamentoSection";
 import { OndeEstamos } from "@/components/home/OndeEstamos";
 import { CtaFinal } from "@/components/home/CtaFinal";
@@ -93,6 +94,7 @@ export default async function CategoriaPage({ params }: Props) {
         </Section>
         <ProdutosLista produtos={cat.produtos} mensagemWhatsApp={cat.mensagemWhatsApp} />
         <DiferenciaisCategoria diferenciais={cat.diferenciais} />
+        {cat.galeria && <GaleriaCategoria galeria={cat.galeria} />}
         <OrcamentoSection categoria={cat} />
         <OndeEstamos fachadaSrc={FACHADA_RETRATO} />
         <Section tone="light" id="faq">

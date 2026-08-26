@@ -32,6 +32,21 @@ export type Categoria = {
   correlatas: string[]; // slugs
   keywordPrincipal: string;
   mensagemWhatsApp: string;
+  /**
+   * Seção opcional "Na loja" (fotos reais extras + parágrafo com keywords
+   * secundárias do grupo de anúncios). Só renderiza quando definida.
+   */
+  galeria?: {
+    titulo: string;
+    texto: string;
+    imagens: {
+      src: string;
+      alt: string;
+      width: number;
+      height: number;
+      legenda: string;
+    }[];
+  };
 };
 
 // Padrão de alt (PRD §7.2) — usado nas 2 categorias que ainda estão com
@@ -47,12 +62,16 @@ export const categorias: Categoria[] = [
     cardTexto: "Fios, disjuntores, quadros, tomadas e iluminação",
     h1: "Material elétrico em Aparecida de Goiânia",
     metaTitle: "Material Elétrico em Aparecida de Goiânia | Progresso",
+    // Keywords do grupo de anúncios (Google Ads, 26/08/2026) distribuídas na
+    // copy: "loja de material elétrico", "materiais elétricos", "cabos
+    // elétricos", "tomadas e interruptores", "fornecedor de material
+    // elétrico", "casa de material elétrico", "material de elétrica".
     metaDescription:
-      "Fios, cabos, disjuntores, quadros, tomadas e iluminação em Aparecida de Goiânia. Loja física no Jardim Nova Era. Orçamento rápido no WhatsApp.",
+      "Loja de material elétrico em Aparecida de Goiânia: fios, cabos elétricos, disjuntores, tomadas e interruptores. Jardim Nova Era. Orçamento no WhatsApp.",
     heroSubtitulo:
-      "Do fio ao quadro de distribuição. Linha elétrica completa para obra nova, reforma e manutenção, com estoque na loja.",
+      "Do fio ao quadro de distribuição. Loja de materiais elétricos com linha completa para obra nova, reforma e manutenção, com estoque na loja.",
     introducao:
-      "Material elétrico não admite improviso: bitola errada esquenta, disjuntor mal dimensionado desarma e instalação fora de norma vira problema caro depois. Na Progresso você encontra a linha elétrica completa em Aparecida de Goiânia — de fio flexível e cabo PP a quadros de distribuição, DR e DPS —, com atendimento de quem sabe o que cada obra pede. Se você tem a lista do eletricista, manda no WhatsApp que conferimos item por item.",
+      "Material elétrico não admite improviso: bitola errada esquenta, disjuntor mal dimensionado desarma e instalação fora de norma vira problema caro depois. A Progresso é loja de material elétrico em Aparecida de Goiânia com a linha completa de materiais elétricos — fios e cabos elétricos, disjuntores, quadros de distribuição, DR e DPS, tomadas e interruptores, iluminação LED —, com atendimento de quem sabe o que cada obra pede. Se você tem a lista do eletricista, manda no WhatsApp que conferimos item por item: somos fornecedor de material elétrico para obra nova, reforma e manutenção.",
     imagem: {
       src: "/images/categorias/material-eletrico.jpg",
       alt: "Parede de tomadas, interruptores e módulos elétricos na loja da Progresso Materiais de Construção em Aparecida de Goiânia",
@@ -83,13 +102,20 @@ export const categorias: Categoria[] = [
         texto: "Item que queimou no fim de semana você resolve no domingo de manhã.",
       },
       {
-        titulo: "Elétrica e ferramenta no mesmo balcão",
-        texto: "Alicate, fita, furadeira e broca você leva junto.",
+        titulo: "Casa de material elétrico e de ferramenta",
+        texto:
+          "Material de elétrica e ferramenta no mesmo balcão: alicate, fita, furadeira e broca você leva junto.",
       },
     ],
     faq: [
       // TODO [CONFIRMAR]: "Vocês vendem fio elétrico por metro?" — vende cortado
       // por metro ou só rolo fechado de 100m? FAQ omitida até confirmação.
+      {
+        // Linhas citadas são as visíveis na foto real do expositor (15.27.52).
+        pergunta: "Vocês têm tomadas e interruptores de quais linhas?",
+        resposta:
+          "Trabalhamos com tomadas, interruptores, espelhos e módulos avulsos das linhas Tramontina Liz, Aria e Lizflex, entre outras. Para uma linha ou cor específica, consulte a disponibilidade pelo WhatsApp.",
+      },
       {
         pergunta: "Tem quadro de distribuição montado?",
         resposta:
@@ -108,6 +134,27 @@ export const categorias: Categoria[] = [
     correlatas: ["ferramentas", "ferragens"],
     keywordPrincipal: "material elétrico aparecida de goiânia",
     mensagemWhatsApp: "Olá! Preciso de material elétrico. Vocês têm:",
+    galeria: {
+      titulo: "Iluminação e acabamento no estoque",
+      texto:
+        "Além de fios e cabos elétricos, a casa de material elétrico da Progresso mantém no Jardim Nova Era refletores LED, arandelas, fita LED, lâmpadas, extensões e protetores elétricos — tudo na prateleira, para levar na hora.",
+      imagens: [
+        {
+          src: "/images/categorias/material-eletrico-iluminacao.jpg",
+          alt: "Refletores LED, arandelas e fita LED no expositor de iluminação da loja de material elétrico Progresso em Aparecida de Goiânia",
+          width: 623,
+          height: 830,
+          legenda: "Refletores LED, arandelas e fita LED",
+        },
+        {
+          src: "/images/categorias/material-eletrico-lampadas.jpg",
+          alt: "Lâmpadas LED, extensões e protetores elétricos na prateleira da Progresso Materiais de Construção em Aparecida de Goiânia",
+          width: 623,
+          height: 830,
+          legenda: "Lâmpadas LED, extensões e protetores elétricos",
+        },
+      ],
+    },
   },
   {
     slug: "material-hidraulico",
@@ -247,6 +294,29 @@ export const categorias: Categoria[] = [
     correlatas: ["impermeabilizantes", "ferramentas"],
     keywordPrincipal: "loja de tintas aparecida de goiânia",
     mensagemWhatsApp: "Olá! Preciso de tinta. Vou pintar:",
+    // Fotos de banco (Pexels, 26/08/2026) — ilustrativas, sem marca visível.
+    // Trocar por foto real das latas na prateleira quando o cliente enviar.
+    galeria: {
+      titulo: "Tinta na cor e na quantidade certa",
+      texto:
+        "Na loja de tintas da Progresso, no Jardim Nova Era, você escolhe a cor, a linha (acrílica, látex ou esmalte) e o tamanho da lata — galão de 3,6 L ou lata de 18 L — e leva junto rolo, pincel, fita crepe e lona. Se ficar na dúvida da quantidade, mande a metragem no WhatsApp que calculamos com você.",
+      imagens: [
+        {
+          src: "/images/categorias/tintas-e-pintura-latas.jpg",
+          alt: "Latas de tinta abertas em várias cores, como as vendidas na loja de tintas Progresso em Aparecida de Goiânia",
+          width: 720,
+          height: 960,
+          legenda: "Latas de tinta em diversas cores",
+        },
+        {
+          src: "/images/categorias/tintas-e-pintura-pinceis.jpg",
+          alt: "Latas de tinta abertas com pincéis e trincha sobre papel de proteção, material de pintura vendido na Progresso em Aparecida de Goiânia",
+          width: 720,
+          height: 960,
+          legenda: "Pincéis, trincha e latas prontas para a demão",
+        },
+      ],
+    },
   },
   {
     slug: "impermeabilizantes",

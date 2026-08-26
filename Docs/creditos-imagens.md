@@ -19,9 +19,10 @@ converte para AVIF/WebP com `srcset` no serve.
 | categorias/areia-e-brita-ensacada.jpg | 15.26.15 | Sacos de areia e brita ensacadas em palete |
 | categorias/material-eletrico.jpg | 15.27.52 | Parede de tomadas, interruptores e módulos elétricos |
 | categorias/metais-e-loucas-sanitarias.jpg | 15.30.15 | Parede de torneiras, registros e acabamentos |
+| categorias/material-eletrico-iluminacao.jpg | 15.24.27 (faixa superior, 3:4 623×830) | Refletores LED, arandelas e fita LED — seção "Na loja" de /material-eletrico (26/08) |
+| categorias/material-eletrico-lampadas.jpg | 15.24.27 (faixa inferior, 3:4 623×830) | Lâmpadas LED, extensões e protetores elétricos — idem |
 
-Fotos da loja ainda sem uso (reserva): 15.24.27 (iluminação, muito
-estreita), 15.24.45 (prateleira de sprays/silicones), 15.24.54 (vedantes e
+Fotos da loja ainda sem uso (reserva): 15.24.45 (prateleira de sprays/silicones), 15.24.54 (vedantes e
 caixas pluviais), 15.25.03 (assentos sanitários e discos de corte),
 15.26.32 (argamassas Votomassa).
 
@@ -34,6 +35,16 @@ Licença Pexels — uso comercial gratuito, sem exigência de atribuição
 |---|---|---|
 | impermeabilizantes.jpg | 38781391 | Aplicação de impermeabilizante em laje/telhado |
 | portas-e-janelas.jpg | 11886022 | Portas duplas de madeira |
+
+### Seção "Na loja" de /tintas-e-pintura (Pexels, 26/08/2026)
+
+Recorte 3:4 em 720×960, JPEG q76 (mozjpeg), ~63–69 KB cada. Sem marca de
+fabricante visível (a candidata 15013713 foi descartada por mostrar logo).
+
+| Arquivo | Foto (ID Pexels) | Conteúdo |
+|---|---|---|
+| tintas-e-pintura-latas.jpg | 1887946 | Latas de tinta abertas em várias cores |
+| tintas-e-pintura-pinceis.jpg | 5641409 | Latas abertas com pincéis e trincha sobre papel |
 
 > Substituir essas 2 por fotos reais quando o cliente enviar (prioridade
 > nº 1 do PRD §7.1). As fotos de banco substituídas em 12/08 estão no

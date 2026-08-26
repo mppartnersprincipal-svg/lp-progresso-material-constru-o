@@ -133,17 +133,18 @@ Manda a lista no WhatsApp que a gente confere o estoque e passa o preço.
 # 1. MATERIAL ELÉTRICO — `/material-eletrico`
 
 **Title (53):** `Material Elétrico em Aparecida de Goiânia | Progresso`
-**Meta description (149):** `Fios, cabos, disjuntores, quadros, tomadas e iluminação em Aparecida de Goiânia. Loja física no Jardim Nova Era. Orçamento rápido no WhatsApp.`
+**Meta description (151):** `Loja de material elétrico em Aparecida de Goiânia: fios, cabos elétricos, disjuntores, tomadas e interruptores. Jardim Nova Era. Orçamento no WhatsApp.`
 **H1:** Material elétrico em Aparecida de Goiânia
 **Keyword principal:** material elétrico aparecida de goiânia
+**Keywords secundárias (grupo de anúncios, 26/08/2026):** cabos elétricos · materiais elétricos · fornecedor de material elétrico · loja de material elétrico · tomadas e interruptores · material de elétrica · casa de material elétrico
 
-**Hero subtítulo:** Do fio ao quadro de distribuição. Linha elétrica completa para obra nova, reforma e manutenção, com estoque na loja.
+**Hero subtítulo:** Do fio ao quadro de distribuição. Loja de materiais elétricos com linha completa para obra nova, reforma e manutenção, com estoque na loja.
 
 **Mensagem do WhatsApp:** `Olá! Preciso de material elétrico. Vocês têm:`
 
 ### Introdução
 
-Material elétrico não admite improviso: bitola errada esquenta, disjuntor mal dimensionado desarma e instalação fora de norma vira problema caro depois. Na Progresso você encontra a linha elétrica completa em Aparecida de Goiânia — de fio flexível e cabo PP a quadros de distribuição, DR e DPS —, com atendimento de quem sabe o que cada obra pede. Se você tem a lista do eletricista, manda no WhatsApp que conferimos item por item.
+Material elétrico não admite improviso: bitola errada esquenta, disjuntor mal dimensionado desarma e instalação fora de norma vira problema caro depois. A Progresso é loja de material elétrico em Aparecida de Goiânia com a linha completa de materiais elétricos — fios e cabos elétricos, disjuntores, quadros de distribuição, DR e DPS, tomadas e interruptores, iluminação LED —, com atendimento de quem sabe o que cada obra pede. Se você tem a lista do eletricista, manda no WhatsApp que conferimos item por item: somos fornecedor de material elétrico para obra nova, reforma e manutenção.
 
 ### O que temos
 
@@ -163,12 +164,21 @@ Material elétrico não admite improviso: bitola errada esquenta, disjuntor mal 
 
 **Bitola certa para cada circuito** — Diga a carga ou o cômodo e ajudamos a escolher o fio e o disjuntor adequados.
 **Estoque de reposição** — Item que queimou no fim de semana você resolve no domingo de manhã.
-**Elétrica e ferramenta no mesmo balcão** — Alicate, fita, furadeira e broca você leva junto.
+**Casa de material elétrico e de ferramenta** — Material de elétrica e ferramenta no mesmo balcão: alicate, fita, furadeira e broca você leva junto.
+
+### Na loja (seção com 2 fotos reais — 26/08/2026)
+
+**Título:** Iluminação e acabamento no estoque
+Além de fios e cabos elétricos, a casa de material elétrico da Progresso mantém no Jardim Nova Era refletores LED, arandelas, fita LED, lâmpadas, extensões e protetores elétricos — tudo na prateleira, para levar na hora.
+Legendas: "Refletores LED, arandelas e fita LED" · "Lâmpadas LED, extensões e protetores elétricos"
 
 ### FAQ
 
 **Vocês vendem fio elétrico por metro?**
 `[CONFIRMAR: vende cortado por metro ou só rolo fechado de 100m?]`
+
+**Vocês têm tomadas e interruptores de quais linhas?**
+Trabalhamos com tomadas, interruptores, espelhos e módulos avulsos das linhas Tramontina Liz, Aria e Lizflex, entre outras. Para uma linha ou cor específica, consulte a disponibilidade pelo WhatsApp.
 
 **Tem quadro de distribuição montado?**
 Trabalhamos com quadros de distribuição em diferentes capacidades, além de disjuntores, DR e DPS para montagem. Consulte a disponibilidade pelo WhatsApp.

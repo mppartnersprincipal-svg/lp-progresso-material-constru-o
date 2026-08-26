@@ -80,6 +80,22 @@ com origem e justificativa. Nenhum valor foi inventado fora da escala existente.
 | D27 | Rótulos de CTA | Fonte única `ctaGlobal` em `content/home.ts` + componente `CtaPair` (usado no hero da home, hero de categoria e fim de "O que temos") | O par WhatsApp+Ligar estava triplicado com strings hardcoded — mudança de copy editaria 3 lugares |
 | D28 | NAP com hífen simples | `"Av. Graça Aranha - Jardim Nova Era, ..."` em todas as superfícies (era travessão em `nap.ts`/`home.ts`/rodapé) | Consistência caractere por caractere com a forma confirmada pelo usuário e com a listagem pública (SEO local) |
 
+## Keywords do grupo de anúncios + fotos extras em /material-eletrico (26/08/2026 — pedido do usuário)
+
+| # | Item | Decisão | Justificativa |
+|---|---|---|---|
+| D29 | Keywords do grupo "materiais elétricos" (print do Google Ads) na copy | Distribuídas em meta description (151 caracteres), subtítulo do hero, introdução (91 palavras), 3º diferencial, nova FAQ e nova seção "Na loja": loja de material elétrico · materiais elétricos · cabos elétricos · tomadas e interruptores · fornecedor de material elétrico · casa de material elétrico · material de elétrica. Variantes sem acento ("eletrico", "eletrica") não entram no texto — o Google trata como a mesma consulta e a grafia errada rebaixaria a copy | PRD §9.6 (message match) sem virar keyword stuffing: cada termo aparece 1× em frase natural; keyword principal segue nos 100 primeiros caracteres |
+| D30 | Seção "Na loja" (`GaleriaCategoria`, campo opcional `galeria` em `categorias.ts`) | 2 recortes 3:4 (623×830) da foto real 15.24.27 (iluminação, que estava em reserva por ser estreita demais para 16:9), entre "Diferenciais" e "Orçamento", fundo branco. Só renderiza onde `galeria` existir — as outras 9 páginas não mudam | Pedido de 1–2 imagens coerentes; foto real vence banco (PRD §7.1). Retrato 3:4 é a única proporção que aproveita a foto sem upscale (D20) |
+| D31 | FAQ "tomadas e interruptores de quais linhas?" cita Tramontina Liz, Aria e Lizflex | Aceita — são as linhas visíveis na foto real do expositor (15.27.52) | Mesma lógica de D22: marca visível no estoque é fato, não suposição. Não afirma preço nem exclusividade |
+
+## Imagens de latas de tinta em /tintas-e-pintura (26/08/2026 — pedido do usuário)
+
+| # | Item | Decisão | Justificativa |
+|---|---|---|---|
+| D32 | Origem das fotos de latas | Pexels (IDs 1887946 e 5641409), não Google Imagens como pedido literalmente | PRD §7.1 proíbe Google Imagens/site de fabricante; Pexels é o banco já adotado no projeto (licença comercial sem atribuição). Nenhuma foto real da loja mostra latas de tinta — a única de pintura (15.24.08) já é a imagem principal da categoria |
+| D33 | Formato e peso | Reuso da seção "Na loja" (D30): 2 recortes 3:4 em 720×960, JPEG q76 mozjpeg, 69 KB + 63 KB no disco; `next/image` serve AVIF/WebP redimensionado, lazy (fora do viewport inicial, sem `priority`), com `sizes` fixo e `aspect-[3/4]` reservando espaço (CLS 0) | Pedido explícito de não atrapalhar o carregamento: nada entra no caminho crítico do LCP (hero) e o peso adicional só é baixado ao rolar até a seção |
+| D34 | Texto da seção | Menciona tamanhos de lata (3,6 L e 18 L) e linhas já listadas em `produtos`; não cita marca nem preço | Reforça "loja de tintas" (keyword principal) sem preencher `[CONFIRMAR]` de marcas por suposição (regra 2) |
+
 ## TODOs abertos (bloqueiam fases seguintes)
 
 - **Logo PNG transparente + versão para fundo escuro** — pedir ao cliente.
